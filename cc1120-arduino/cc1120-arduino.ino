@@ -1,15 +1,30 @@
 #include <CC1120-arduino-extended.h>
+#include "SPI.h"
 
-Morse morse(2);
+/******************* HARDWARE PIN CONNECTIONS ***************************
+*************************************************************************  
+  MISO = 12,
+  MOSI = 11,
+  CSN = 10,
+  RESET = 9,
+  SCKL = 3
+*/
 
 void setup()
 {
+  Serial.begin(9600);
+  SPI.begin();
+
+  pinMode(CSN, OUPUT);
+  pinMode(RESET, OUPUT);
+  digitalWrite(CSN, HIGH);
+  digitalWrite(RESET, HIGH);
+
+  Serial.println("CC1120 Program Start")
 }
 
 void loop()
 {
-  morse.dot(); morse.dot(); morse.dot();
-  morse.dash(); morse.dash(); morse.dash();
-  morse.dot(); morse.dot(); morse.dot();
-  delay(3000);
+  Serial.println("Hello");
+  delay(1000);
 }

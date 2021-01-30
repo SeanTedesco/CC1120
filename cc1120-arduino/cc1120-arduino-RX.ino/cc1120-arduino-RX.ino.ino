@@ -61,7 +61,7 @@
 #define PA_CFG0 0x2D
 #define PKT_LEN 0x2E
 
-
+//define extended address
 #define EXTENDED ADDRESS 0x2F
 
 //define extended registers
@@ -430,33 +430,46 @@ void SendData(byte data)
     Write_eeprom_strobe(data);  //txfifo, data, size
     delay(10);
     
-    Write_eeprom_strobe(0x35);                //stx
+    Write_eeprom_strobe(0x35);  //stx
     delay(10);
-    //while (!digitalRead(IOCFG0));     // Wait for GDO0 to be set -> sync transmitted  
-    
-    //while (digitalRead(IOCFG0));      // Wait for GDO0 to be cleared -> end of packet
-    Write_eeprom_strobe(0x3B);                //flush tx fifo
+
+    Write_eeprom_strobe(SFTX);  //flush tx fifo
 }
 
-byte Receive_data()                               //receive data
+byte Receive_data()                               
 {
-  Write_eeprom_strobe(0x36);                      //Set to IDLE MODE
-  delay(10);
-  Write_eeprom_strobe(0x34);                      //Set to RX MODE
-  delay(10);
+    byte numBytes = 0x00;
+    byte address = 0x00;
+    byte rx_byte = 0x00; 
   
-  byte size;
-  byte status[2];
-  if(Read_eeprom_extended(0xD7))            // BYTES_IN_RXFIFO
-  {
-    Write_eeprom_strobe(0x3A);
-    return size;
-  }
-  else
-  {
-    Write_eeprom_strobe(0x3A); 
-    return 0;
-  } 
+    Write_eeprom_strobe(SIDLE); //Set to IDLE MODE
+    delay(2);
+    
+    Write_eeprom_strobe(SRX); //Set to RX MODE
+    delay(2);
+
+    if( !Read_eeprom_extended(NUM_RXBYTES) ) // BYTES_IN_RXFIFO
+    {
+        Serial.println("<no more bytes>");  // update user 
+    }
+    else
+    {      
+        Serial.println("<we got bytes>"); // update user
+        
+        address = Read_eeprom_extended(RXFIRST);  // get address of the first byte in FIFO
+        delay(1); 
+        
+        rx_byte = Read_eeprom_direct(address); // read from the provided address
+        delay(1);
+    } 
+
+    Write_eeprom_strobe(SIDLE); // set to IDLE MODE
+    delay(1);
+    
+    Write_eeprom_strobe(SFRX);  // flush RX FIFO 
+    delay(1); 
+    
+    return rx_byte;
 }
 
 byte Read_eeprom_configuration(int EEPROM_address)    //read from Configuration Register
@@ -472,23 +485,36 @@ byte Read_eeprom_configuration(int EEPROM_address)    //read from Configuration 
 byte Read_eeprom_extended(int EEPROM_address) //read from Extended Register
 {
   int data;
-  digitalWrite(SLAVESELECT,LOW);             //enable device communication 
-  Send_SPI((char)(0xAF));                //send address 1
-  Send_SPI((char)(EEPROM_address));      //send address 2
-  data = Send_SPI(0xFF);                 //get data
-  digitalWrite(SLAVESELECT,HIGH);            //disable device communication 
-  return data;                               //return data
+  digitalWrite(SLAVESELECT,LOW);         // enable device communication 
+  Send_SPI((char)(0xAF));                // send address 1
+  Send_SPI((char)(EEPROM_address));      // send address 2
+  data = Send_SPI(0xFF);                 // get data
+  digitalWrite(SLAVESELECT,HIGH);        // disable device communication 
+  return data;                           // return data
 }
 
-byte Read_eeprom_direct(int EEPROM_address)    //read from Direct Memory Access Register
+/*
+ * @brief: read frmo Direct Memory Access Register
+ * @param: EEPROM_address, address in normal address space 
+ * @return: byte, 
+ */
+byte Read_eeprom_direct(int EEPROM_address)
 {
-  int data;
-  digitalWrite(SLAVESELECT,LOW);            //enable device communication 
-  Send_SPI((char)(0xBE));              //send adrress 1
-  Send_SPI((char)(EEPROM_address));     //send address 2
-  data = Send_SPI(0xFF);                //get data
-  digitalWrite(SLAVESELECT,HIGH);           //disable device communication 
-  return data;                              //return data
+  byte data;
+  
+  digitalWrite(SLAVESELECT,LOW);  //enable device communication 
+  delay(1);
+  
+  Send_SPI( (char)(0x3E) );  //send address to DMA register
+  delay(1); 
+  
+  Send_SPI( (char)(EEPROM_address) ); // send address within FIFO
+  delay(1); 
+  
+  data = Send_SPI(0xFF);  //get data
+  
+  digitalWrite(SLAVESELECT, HIGH);  //disable device communication 
+  return data;  //return data
 }
 
 void Write_eeprom_configuration(int EEPROM_address, int EEPROM_data)    //write to Configuration Register
@@ -516,39 +542,52 @@ void Write_eeprom_extended(int EEPROM_address, int EEPROM_data)    //write to Ex
   digitalWrite(SLAVESELECT,HIGH);            //disable device communication 
 }
 
-void Write_eeprom_direct(int EEPROM_address, int EEPROM_data)    //write to Direct Memory Access Register
+/*
+ * @brief: write to Direct Memory Access Register
+ * @param: EEPROM_address, address in normal address space
+ * @param: EEPROM_data, data to be written to address space  
+ * @return: void
+ */
+void Write_eeprom_direct(int EEPROM_address, int EEPROM_data)    
 {  
-  digitalWrite(SLAVESELECT,LOW);             //enable device communication 
-  Send_SPI((char)(0x3E));                //send address 1
-  Send_SPI((char)(EEPROM_address));      //send address 2
-  Send_SPI((char)(EEPROM_data));         //send data
-  digitalWrite(SLAVESELECT,HIGH);            //disable device communication 
+  digitalWrite(SLAVESELECT,LOW);  //enable device communication 
+  
+  Send_SPI( (char)(0x3E) ); //send address for direct memory access
+  delay(1);
+  
+  Send_SPI((char)(EEPROM_address)); //send address for location in FIFO
+  delay(1); 
+  
+  Send_SPI((char)(EEPROM_data));  //send data at location in FIFO
+  delay(1); 
+  
+  digitalWrite(SLAVESELECT,HIGH); //disable device communication 
 }
 
 
-char Send_SPI(char verzenden){
+byte Send_SPI(byte spi_data){
   
-  uint8_t so = 0x00;
+  byte so = 0x00;
   uint8_t i = 0;
   
   // data transfer
   for (i = 8; i > 0; i--) 
   {
     // Slave Input write
-    digitalWrite(DATAOUT, (verzenden >> i-1) & 0x01);
+    digitalWrite(DATAOUT, (spi_data >> i-1) & 0x01);
     delay(1);
     
     // SCLK up
     digitalWrite(SPICLOCK, HIGH);
     
     // Slave Output read
-    so |= (uint8_t) digitalRead(DATAIN) << i-1;
+    so |= (byte) (digitalRead(DATAIN) << i-1 & 0x01);
     delay(1);
     
     // SCLK down
     digitalWrite(SPICLOCK, LOW);
     delay(1);
   }
-  return verzenden;
+  return so;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

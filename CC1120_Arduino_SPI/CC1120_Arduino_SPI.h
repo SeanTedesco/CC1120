@@ -271,6 +271,8 @@ typedef struct
 
 typedef uint8 status_t;
 
+SPISettings cc_spi_settings;
+
 /******************************************************************************
  * FUNCTIONS
  */
@@ -278,16 +280,17 @@ typedef uint8 status_t;
 /* SPI access functions */ 
 void spiInterfaceInit();
 void registerConfig(registerSetting_t* setting, uint16 len);
+void writeSettings(registerSetting_t* settings);
 
+/* Basic read and write functions */
+status_t ccReadReg(uint16 addr, uint8 *pData, uint8 len);
+status_t ccWriteReg(uint16 addr, uint8 *pData, uint8 len);
 
 status_t registerAccess_16B(uint8 accessType, uint8 extAddr, uint8 regAddr, uint8 *pData, uint8 len);
 status_t registerAccess_8B(uint8 accessType, uint8 addrByte, uint8 *pData, uint8 len);
 static void ccReadWriteBurstSingle(uint8 addr, uint8 *pData, uint16 len);
 status_t sendSPI(uint8 mosi_byte);
 
-/* Basic read and write functions */
-status_t ccReadRegister(uint16 addr, uint8 *data, uint8 len);
-status_t ccWriteRegister(uint16 addr, uint8 *data, uint8 len);
 
 status_t ccGetTxStatus(void);
 status_t ccGetRxStatus(void);

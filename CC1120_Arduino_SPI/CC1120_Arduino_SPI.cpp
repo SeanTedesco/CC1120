@@ -14,15 +14,166 @@
  *              a 40 MHz, but Arduino support a maximum of 16 MHz.
  *              CC112x operates on SPI_MODE0 and MSBFIRST
  *
- * @param       speedMaximum: The maximum speed of communication.
- * @param       dataOrder: MSBFIRST or LSBFIRST
- * @param       dataMode : SPI_MODE0, SPI_MODE1, SPI_MODE2, or SPI_MODE3
+ * @param       speedMaximum - The maximum speed of communication.
+ * @param       dataOrder - MSBFIRST or LSBFIRST
+ * @param       dataMode - SPI_MODE0, SPI_MODE1, SPI_MODE2, or SPI_MODE3
  *
  * @return      void
  */
 void spiInterfaceInit()
 {
   cc_spi_settings = SPISettings(4000000, MSBFIRST, SPI_MODE0);
+}
+/******************************************************************************
+ * @fn          writeSettings
+ *
+ * @brief       Writes byte value to each of the configuration registers 
+ *              specified in settings array. 
+ *
+ * @param       settings - array of registerSetting_t objects. Each object must   
+ *                          have address and data bytes. 
+ *
+ * @return      void
+ */
+void writeSettings(registerSetting_t *settings){
+  uint8 statusByte;
+  uint8 marcstate;
+
+  radio.registerConfig(settings, sizeof(settings)/sizeof(registerSetting_t));
+
+  statusByte = radio.ccReadReg(CC112X_MARCSTATE, &marcstate, 1);
+
+  Serial.print("register conf: ");
+  Serial.print(statusByte, HEX);
+  Serial.print(" | ");
+  Serial.println(marcstate, HEX);
+}
+/*******************************************************************************
+*   @fn         registerConfig
+*
+*   @brief      Write register settings as given by SmartRF Studio found in
+*               cc112x_easy_link_reg_config.h
+*
+*   @param      setting - the setting to be written (address and data)
+*   @param      len - length of the array of settings to be written
+*
+*   @return     none
+*/
+void registerConfig(registerSetting_t * setting, uint16 len) {
+    uint8 writeByte;
+
+    // Reset radio
+    ccStrobeCommand(CC112X_SRES);
+
+    delay(1000); // TODO This is probably generous. See if can be lowered.
+
+    // Write registers to radio
+    for(uint16 i = 0; i < len; i++) {
+        writeByte = s[i].data;
+        ccWriteReg(s[i].addr, &writeByte, 1);
+    }
+
+    for(uint16 i = 0; i < len; i++) {
+        ccReadReg(s[i].addr, &writeByte, 1);
+        Serial.println(writeByte, HEX);
+    }
+}
+/*******************************************************************************
+ * @fn          ccStrobeCommand
+ *
+ * @brief       Send command strobe to the radio. Returns status byte read
+ *              during transfer of command strobe. Validation of provided
+ *              is not done. Function assumes chip is ready.
+ *
+ * @param       cmd - command strobe
+ *
+ * @return      status byte
+ */
+status_t ccStrobeCommand(uint8 cmd)
+{
+  uint8 rc;
+  SPI.beginTransaction(cc_spi_settings);
+  digitalWrite(CC112X_CHIP_SELECT, LOW); // Bring chip select low to start
+
+  rc = SPI.transfer(cmd);
+
+  digitalWrite(CC112X_CHIP_SELECT, HIGH); // Bring chip select high to stop
+  SPI.endTransaction();
+
+  return rc;
+}
+
+/******************************************************************************
+ * @fn          ccReadReg
+ *
+ * @brief       Read value(s) from config/status/extended radio register(s).
+ *              If len  = 1: Reads a single register
+ *              if len != 1: Reads len register values in burst mode
+ *
+ * @param       addr   - address of first register to read
+ * @param       *pData - pointer to data array where read bytes are saved
+ * @param       len   - number of bytes to read
+ *
+ * output parameters
+ *
+ * @return      status_t
+ */
+status_t ccReadReg(uint16 addr, uint8 *pData, uint8 len)
+{
+  uint8 tempExt  = (uint8)(addr>>8);
+  uint8 tempAddr = (uint8)(addr & 0x00FF);
+  uint8 rc;
+
+  /* Checking if this is a FIFO access -> returns chip not ready  */
+  if((CC112X_SINGLE_TXFIFO<=tempAddr)&&(tempExt==0)) return STATUS_CHIP_RDYn_BM;
+
+  /* Decide what register space is accessed */
+  if(!tempExt)
+  {
+    rc = registerAccess_8B((RADIO_BURST_ACCESS|RADIO_READ_ACCESS),tempAddr,pData,len);
+  }
+  else if (tempExt == 0x2F)
+  {
+    rc = registerAccess_16B((RADIO_BURST_ACCESS|RADIO_READ_ACCESS),tempExt,tempAddr,pData,len);
+  }
+  return (rc);
+}
+/******************************************************************************
+ * @fn          ccWriteReg
+ *
+ * @brief       Write value(s) to config/status/extended radio register(s).
+ *              If len  = 1: Writes a single register
+ *              if len  > 1: Writes len register values in burst mode
+ *
+ * input parameters
+ *
+ * @param       addr   - address of first register to write
+ * @param       *pData - pointer to data array that holds bytes to be written
+ * @param       len    - number of bytes to write
+ *
+ * output parameters
+ *
+ * @return      rfStatus_t
+ */
+status_t ccWriteReg(uint16 addr, uint8 *pData, uint8 len)
+{
+  uint8 tempExt  = (uint8)(addr>>8);
+  uint8 tempAddr = (uint8)(addr & 0x00FF);
+  uint8 rc;
+
+  /* Checking if this is a FIFO access - returns chip not ready */
+  if((CC112X_SINGLE_TXFIFO<=tempAddr)&&(tempExt==0)) return STATUS_CHIP_RDYn_BM;
+
+  /* Decide what register space is accessed */
+  if(!tempExt)
+  {
+    rc = registerAccess_8B((RADIO_BURST_ACCESS|RADIO_WRITE_ACCESS),tempAddr,pData,len);
+  }
+  else if (tempExt == 0x2F)
+  {
+    rc = registerAccess_16B((RADIO_BURST_ACCESS|RADIO_WRITE_ACCESS),tempExt,tempAddr,pData,len);
+  }
+  return (rc);
 }
 /*******************************************************************************
  * @fn          registerAccess_8B

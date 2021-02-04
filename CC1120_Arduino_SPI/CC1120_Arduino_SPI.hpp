@@ -1,5 +1,5 @@
-#ifndef CC1120_ARDUINO_SPI_H
-#define CC1120_ARDUINO_SPI_H
+#ifndef CC1120_ARDUINO_SPI_HPP
+#define CC1120_ARDUINO_SPI_HPP
 
 
 /******************************************************************************
@@ -271,33 +271,27 @@ typedef struct
 
 typedef uint8 status_t;
 
-SPISettings cc_spi_settings;
-
 /******************************************************************************
  * FUNCTIONS
  */
 
-/* SPI access functions */ 
-void spiInterfaceInit();
-void registerConfig(registerSetting_t* setting, uint16 len);
-void writeSettings(registerSetting_t* settings);
+/* setup functions */ 
+void SPI_settingsInit(void);
+void CC_writeSettings(registerSetting_t *settings);
 
-/* Basic read and write functions */
-status_t ccReadReg(uint16 addr, uint8 *pData, uint8 len);
-status_t ccWriteReg(uint16 addr, uint8 *pData, uint8 len);
+/* Radio Functions - to be made public */
+void CC_registerConfig(registerSetting_t* setting, uint16 len);
+status_t CC_SPI_strobeCommand(uint8 cmd);
 
-status_t registerAccess_16B(uint8 accessType, uint8 extAddr, uint8 regAddr, uint8 *pData, uint8 len);
-status_t registerAccess_8B(uint8 accessType, uint8 addrByte, uint8 *pData, uint8 len);
-static void ccReadWriteBurstSingle(uint8 addr, uint8 *pData, uint16 len);
-status_t sendSPI(uint8 mosi_byte);
+/* low level control */
+status_t CC_SPI_readRegister(uint16 addr, uint8 *pData, uint8 len);
+status_t CC_SPI_writeRegister(uint16 addr, uint8 *pData, uint8 len);
 
+status_t CC_SPI_registerAccess_16B(uint8 accessType, uint8 extAddr, uint8 regAddr, uint8 *pData, uint8 len);
+status_t CC_SPI_registerAccess_8B(uint8 accessType, uint8 addrByte, uint8 *pData, uint8 len);
 
-status_t ccGetTxStatus(void);
-status_t ccGetRxStatus(void);
+void CC_SPI_readWriteBurstSingle(uint8 addr, uint8 *pData, uint16 len);
+status_t CC_SPI_sendByte(uint8 data);
 
-status_t ccReadRxFifo(uint8 *pReadData, uint8 len);
-status_t ccWriteTxFifo(uint8 *pWriteData, uint8 len);
-
-status_t ccStrobeCommand(uint8 cmd);
 
 #endif

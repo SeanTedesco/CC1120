@@ -1,8 +1,6 @@
-#include "CC1120_Arduino_SPI.h"
-#include "Arduino.h"
+#include "CC1120_Arduino_SPI.hpp"
 
-
-static const registerSetting_t preferredSettings[] = {
+static registerSetting_t preferredSettings[] = {
     {CC112X_RFEND_CFG0,     0x20},
     {CC112X_IOCFG3,         0xB0},
     {CC112X_IOCFG2,         0x06},
@@ -46,7 +44,6 @@ static const registerSetting_t preferredSettings[] = {
     {CC112X_XOSC1,          0x07},
 };
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void setup() 
 {
@@ -62,14 +59,13 @@ void setup()
     Serial.println("<start program>");
 
     Serial.println("<begin init>");
-    writeSettings(preferredSettings);    // write settings from prefered setting array
-    Serial.println("<end init")
+    CC_writeSettings(preferredSettings);    // write settings from prefered setting array
+    Serial.println("<end init>");
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void loop() 
 {
-
-
-
+  Serial.print("Hello");
+  delay(1000);
 }

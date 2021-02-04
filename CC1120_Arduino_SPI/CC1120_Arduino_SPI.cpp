@@ -2,13 +2,14 @@
  * INCLUDES
  */
 
-#include "CC1120_Arduino_SPI.h"
+#include "CC1120_Arduino_SPI.hpp"
 
 /******************************************************************************
  * FUNCTIONS
  */
 /******************************************************************************
- * @fn          spiInterfaceInit
+ * ****************************************************************************
+ * @fn          SPI_settingsInit
  *
  * @brief       Function to initialize SPI on Arduino. CC112 operates at 
  *              a 40 MHz, but Arduino support a maximum of 16 MHz.
@@ -20,12 +21,16 @@
  *
  * @return      void
  */
-void spiInterfaceInit()
+
+SPISettings cc_spi_settings;
+
+void SPI_settingsInit()
 {
   cc_spi_settings = SPISettings(4000000, MSBFIRST, SPI_MODE0);
 }
 /******************************************************************************
- * @fn          writeSettings
+ * ****************************************************************************
+ * @fn          CC_writeSettings
  *
  * @brief       Writes byte value to each of the configuration registers 
  *              specified in settings array. 
@@ -35,21 +40,24 @@ void spiInterfaceInit()
  *
  * @return      void
  */
-void writeSettings(registerSetting_t *settings){
+void CC_writeSettings(registerSetting_t *settings){
+
   uint8 statusByte;
   uint8 marcstate;
 
-  radio.registerConfig(settings, sizeof(settings)/sizeof(registerSetting_t));
+  CC_registerConfig(settings, sizeof(settings)/sizeof(registerSetting_t));
 
-  statusByte = radio.ccReadReg(CC112X_MARCSTATE, &marcstate, 1);
+  statusByte = CC_SPI_readRegister(CC112X_MARCSTATE, &marcstate, 1);
 
-  Serial.print("register conf: ");
+  Serial.print("<Register Conf: ");
   Serial.print(statusByte, HEX);
   Serial.print(" | ");
-  Serial.println(marcstate, HEX);
+  Serial.print(marcstate, HEX);
+  Serial.println(">");
 }
 /*******************************************************************************
-*   @fn         registerConfig
+* *****************************************************************************
+*   @fn         CC_registerConfig
 *
 *   @brief      Write register settings as given by SmartRF Studio found in
 *               cc112x_easy_link_reg_config.h
@@ -59,39 +67,40 @@ void writeSettings(registerSetting_t *settings){
 *
 *   @return     none
 */
-void registerConfig(registerSetting_t * setting, uint16 len) {
+void CC_registerConfig(registerSetting_t *setting, uint16 len) {
     uint8 writeByte;
 
     // Reset radio
-    ccStrobeCommand(CC112X_SRES);
+    CC_SPI_strobeCommand(CC112X_SRES);
 
     delay(1000); // TODO This is probably generous. See if can be lowered.
 
     // Write registers to radio
     for(uint16 i = 0; i < len; i++) {
-        writeByte = s[i].data;
-        ccWriteReg(s[i].addr, &writeByte, 1);
+        writeByte = setting[i].data;
+        CC_SPI_writeRegister(setting[i].addr, &writeByte, 1);
     }
 
     for(uint16 i = 0; i < len; i++) {
-        ccReadReg(s[i].addr, &writeByte, 1);
+        CC_SPI_readRegister(setting[i].addr, &writeByte, 1);
         Serial.println(writeByte, HEX);
     }
 }
 /*******************************************************************************
- * @fn          ccStrobeCommand
+ * @fn          CC_SPI_strobeCommand
  *
  * @brief       Send command strobe to the radio. Returns status byte read
  *              during transfer of command strobe. Validation of provided
- *              is not done. Function assumes chip is ready.
+ *              command is not done. Function assumes chip is ready.
  *
  * @param       cmd - command strobe
  *
  * @return      status byte
  */
-status_t ccStrobeCommand(uint8 cmd)
+status_t CC_SPI_strobeCommand(uint8 cmd)
 {
   uint8 rc;
+
   SPI.beginTransaction(cc_spi_settings);
   digitalWrite(CC112X_CHIP_SELECT, LOW); // Bring chip select low to start
 
@@ -104,7 +113,7 @@ status_t ccStrobeCommand(uint8 cmd)
 }
 
 /******************************************************************************
- * @fn          ccReadReg
+ * @fn          CC_SPI_readRegister
  *
  * @brief       Read value(s) from config/status/extended radio register(s).
  *              If len  = 1: Reads a single register
@@ -114,11 +123,9 @@ status_t ccStrobeCommand(uint8 cmd)
  * @param       *pData - pointer to data array where read bytes are saved
  * @param       len   - number of bytes to read
  *
- * output parameters
- *
  * @return      status_t
  */
-status_t ccReadReg(uint16 addr, uint8 *pData, uint8 len)
+status_t CC_SPI_readRegister(uint16 addr, uint8 *pData, uint8 len)
 {
   uint8 tempExt  = (uint8)(addr>>8);
   uint8 tempAddr = (uint8)(addr & 0x00FF);
@@ -130,16 +137,16 @@ status_t ccReadReg(uint16 addr, uint8 *pData, uint8 len)
   /* Decide what register space is accessed */
   if(!tempExt)
   {
-    rc = registerAccess_8B((RADIO_BURST_ACCESS|RADIO_READ_ACCESS),tempAddr,pData,len);
+    rc = CC_SPI_registerAccess_8B((RADIO_BURST_ACCESS|RADIO_READ_ACCESS),tempAddr,pData,len);
   }
   else if (tempExt == 0x2F)
   {
-    rc = registerAccess_16B((RADIO_BURST_ACCESS|RADIO_READ_ACCESS),tempExt,tempAddr,pData,len);
+    rc = CC_SPI_registerAccess_16B((RADIO_BURST_ACCESS|RADIO_READ_ACCESS),tempExt,tempAddr,pData,len);
   }
   return (rc);
 }
 /******************************************************************************
- * @fn          ccWriteReg
+ * @fn          CC_SPI_writeRegister
  *
  * @brief       Write value(s) to config/status/extended radio register(s).
  *              If len  = 1: Writes a single register
@@ -155,7 +162,7 @@ status_t ccReadReg(uint16 addr, uint8 *pData, uint8 len)
  *
  * @return      rfStatus_t
  */
-status_t ccWriteReg(uint16 addr, uint8 *pData, uint8 len)
+status_t CC_SPI_writeRegister(uint16 addr, uint8 *pData, uint8 len)
 {
   uint8 tempExt  = (uint8)(addr>>8);
   uint8 tempAddr = (uint8)(addr & 0x00FF);
@@ -167,16 +174,16 @@ status_t ccWriteReg(uint16 addr, uint8 *pData, uint8 len)
   /* Decide what register space is accessed */
   if(!tempExt)
   {
-    rc = registerAccess_8B((RADIO_BURST_ACCESS|RADIO_WRITE_ACCESS),tempAddr,pData,len);
+    rc = CC_SPI_registerAccess_8B((RADIO_BURST_ACCESS|RADIO_WRITE_ACCESS),tempAddr,pData,len);
   }
   else if (tempExt == 0x2F)
   {
-    rc = registerAccess_16B((RADIO_BURST_ACCESS|RADIO_WRITE_ACCESS),tempExt,tempAddr,pData,len);
+    rc = CC_SPI_registerAccess_16B((RADIO_BURST_ACCESS|RADIO_WRITE_ACCESS),tempExt,tempAddr,pData,len);
   }
   return (rc);
 }
 /*******************************************************************************
- * @fn          registerAccess_8B
+ * @fn          CC_SPI_registerAccess_8B
  *
  * @brief       Read or write from / to an 8 bit register (normal address space).
  *              The function handles burst and single read / write as specfied in
@@ -192,7 +199,7 @@ status_t ccWriteReg(uint16 addr, uint8 *pData, uint8 len)
  *
  * @return      chip status
  */
-status_t registerAccess_8B(uint8 accessType, uint8 addrByte, uint8 *pData, uint8 len)
+status_t CC_SPI_registerAccess_8B(uint8 accessType, uint8 addrByte, uint8 *pData, uint8 len)
 {
   uint8 returnValue; 
 
@@ -200,7 +207,7 @@ status_t registerAccess_8B(uint8 accessType, uint8 addrByte, uint8 *pData, uint8
   digitalWrite(CC112X_CHIP_SELECT, LOW);    // bring chip select low to start comms
 
   returnValue = SPI.transfer(accessType | addrByte);    // write the address we are accessing
-  ccReadWriteBurstSingle(accessType | addrByte, pData, len);    // read or write data
+  CC_SPI_readWriteBurstSingle(accessType | addrByte, pData, len);    // read or write data
 
   digitalWrite(CC112X_CHIP_SELECT, HIGH); // Bring chip select high to stop
   SPI.endTransaction();
@@ -208,7 +215,7 @@ status_t registerAccess_8B(uint8 accessType, uint8 addrByte, uint8 *pData, uint8
   return returnValue;
 }
 /******************************************************************************
- * @fn          registerAccess_16B
+ * @fn          CC_SPI_registerAccess_16B
  *
  * @brief       Read or write in the extended adress space of CC112X.
  *              The function handles burst and single read / write as specified
@@ -227,7 +234,7 @@ status_t registerAccess_8B(uint8 accessType, uint8 addrByte, uint8 *pData, uint8
  *
  * @return      rfStatus_t
  */
-status_t registerAccess_16B(uint8 accessType, uint8 extAddr, uint8 regAddr, uint8 *pData, uint8 len)
+status_t CC_SPI_registerAccess_16B(uint8 accessType, uint8 extAddr, uint8 regAddr, uint8 *pData, uint8 len)
 {
   uint8 returnValue;
 
@@ -236,7 +243,7 @@ status_t registerAccess_16B(uint8 accessType, uint8 extAddr, uint8 regAddr, uint
 
   returnValue = SPI.transfer(accessType|extAddr);   // command to access extended registers
   SPI.transfer(regAddr);    // The first byte following this command is interpreted as the extended address
-  ccReadWriteBurstSingle(accessType|extAddr, pData, len);   // Exactly one data byte is expected after the extended address byte
+  CC_SPI_readWriteBurstSingle(accessType|extAddr, pData, len);   // Exactly one data byte is expected after the extended address byte
 
   digitalWrite(CC112X_CHIP_SELECT, HIGH); // Bring chip select high to stop
   SPI.endTransaction();
@@ -244,7 +251,7 @@ status_t registerAccess_16B(uint8 accessType, uint8 extAddr, uint8 regAddr, uint
   return returnValue;
 }
 /*******************************************************************************
- * @fn          trxReadWriteBurstSingle
+ * @fn          CC_SPI_readWriteBurstSingle
  *
  * @brief       When the address byte is sent to the SPI slave, the next byte
  *              communicated is the data to be written or read. The address
@@ -262,7 +269,7 @@ status_t registerAccess_16B(uint8 accessType, uint8 extAddr, uint8 regAddr, uint
  *
  * @return      void
  */
-static void ccReadWriteBurstSingle(uint8 addr, uint8 *pData, uint16 len)
+void CC_SPI_readWriteBurstSingle(uint8 addr, uint8 *pData, uint16 len)
 {
 	uint16 i;
 	
@@ -310,18 +317,18 @@ static void ccReadWriteBurstSingle(uint8 addr, uint8 *pData, uint16 len)
   return;
 }
 /*******************************************************************************
- * @fn          sendSPI
+ * @fn          CC_SPI_sendByte
  *
  * @brief       Sends 1 byte on the SPI line. This function does not use the SPI
  *              transfer function included in the Arduino SPI library, but uses 
- *              manual setting of the SCLK. 
+ *              manual setting of the SCLK. Same purpose as CC_SPI_readWriteBurstSingle
  *
  * @param       data     - byte to be sent (data or address)
  *
  * @return      status_t
  */
-status_t sendSPI(uint8 data){
-  
+status_t CC_SPI_sendByte(uint8 data)
+{  
   uint8 returnValue = 0x00;
   
   // data transfer
@@ -333,6 +340,7 @@ status_t sendSPI(uint8 data){
     
     // SCLK up
     digitalWrite(CC112X_SERIAL_CLOCK, HIGH);
+    delay(1);
     
     // Slave Output read
     returnValue |= (uint8)(digitalRead(CC112X_SPI_MISO) << i);

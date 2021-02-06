@@ -47,10 +47,10 @@ UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 
-const uint8_t CC112X_IOCFG3 = 0x0000;
-const uint8_t CC112X_IOCFG2 = 0x0001;
-const uint8_t CC112X_IOCFG1 = 0x0002;
-const uint8_t CC112X_IOCFG0 = 0x0003;
+const uint8_t CC112X_IOCFG3 = 0x00;
+const uint8_t CC112X_IOCFG2 = 0x01;
+const uint8_t CC112X_IOCFG1 = 0x02;
+const uint8_t CC112X_IOCFG0 = 0x88;
 
 /* USER CODE END PV */
 
@@ -133,7 +133,7 @@ int main(void)
 	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
 
 	  /* write out address byte */
-	  HAL_SPI_Transmit(&hspi2, (uint8_t*)&CC112X_IOCFG3, 1, 100);
+	  HAL_SPI_Transmit(&hspi2, (uint8_t*)&CC112X_IOCFG0, 1, 100);
 
 	  spi_buffer = 0xB0;
 

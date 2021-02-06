@@ -1,5 +1,21 @@
 #include "CC1120_Arduino_SPI.hpp"
 
+/*************************************************************************
+ * DEFINES
+ */
+#define PKTLEN 30 
+
+/*************************************************************************
+ * Local Variables
+ */ uint16_t packetCounter = 0;
+
+/*************************************************************************
+ * Static Functions
+ */
+static void createPacket(uint8_t randBuffer[]);
+/*************************************************************************
+ * register settings
+ */
 static registerSetting_t preferredSettings[] = {
     {CC112X_RFEND_CFG0,     0x20},
     {CC112X_IOCFG3,         0xB0},
@@ -59,13 +75,49 @@ void setup()
     Serial.println("<start program>");
 
     Serial.println("<begin init>");
+    SPI_settingsInit();
     CC_writeSettings(preferredSettings);    // write settings from prefered setting array
     Serial.println("<end init>");
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 void loop() 
 {
-  Serial.print("Hello");
+  uint8 txBuffer[PKTLEN+1] = {0}; 
+
+  //update packet counter
+  packetCounter++; 
+
+  //create a random packet
+  createPacket(txBuffer);
+
+  //write packet to TX FIFO
+  CC_SPI_writeTxFIFO(txBuffer, sizeof(txBuffer));
+
+  //strobe tx to send packet
+  CC_SPI_strobeCommand(CC112X_STX); 
+  
   delay(1000);
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*******************************************************************************
+*   @fn         createPacket
+*
+*   @brief      This function is called before a packet is transmitted. It fills
+*               the txBuffer with a packet consisting of a length byte, two
+*               bytes packet counter and n random bytes.
+*
+*   @param       Pointer to start of txBuffer
+*
+*   @return      none
+*/
+static void createPacket(uint8 txBuffer[]) {
+
+    txBuffer[0] = PKTLEN;                           // Length byte
+    txBuffer[1] = (uint8) (packetCounter >> 8);     // MSB of packetCounter
+    txBuffer[2] = (uint8)  packetCounter;           // LSB of packetCounter
+
+    // Fill rest of buffer with random bytes
+    for(uint8 i = 3; i < (PKTLEN + 1); i++) {
+        txBuffer[i] = (uint8)rand();
+    }
 }

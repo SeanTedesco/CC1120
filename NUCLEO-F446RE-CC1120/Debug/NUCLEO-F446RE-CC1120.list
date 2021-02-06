@@ -516,7 +516,7 @@ int main(void)
  8000638:	f000 fe02 	bl	8001240 <HAL_GPIO_WritePin>
 
 	  /* write out address byte */
-	  HAL_SPI_Transmit(&hspi2, (uint8_t*)&CC112X_IOCFG3, 1, 100);
+	  HAL_SPI_Transmit(&hspi2, (uint8_t*)&CC112X_IOCFG0, 1, 100);
  800063c:	2364      	movs	r3, #100	; 0x64
  800063e:	2201      	movs	r2, #1
  8000640:	490f      	ldr	r1, [pc, #60]	; (8000680 <main+0xd0>)

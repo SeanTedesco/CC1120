@@ -340,26 +340,28 @@ void loop(){
   //waitForKeyPress();
 
   // How many bytes are in the TX FIFO
-  radio.cc112xSpiReadReg(CC112X_NUM_TXBYTES, &numTxBytes, 1);
-  Serial.print(numTxBytes);
-  Serial.println(" TX bytes");
+  radio.cc112xSpiReadReg(CC112X_NUM_RXBYTES, &numRxBytes, 1);
+  Serial.print(numRxBytes);
+  Serial.println(" RX bytes");
 
   //waitForKeyPress();
 
-  // Write the packet to the TX FIFO on the radio
-  radio.cc112xSpiWriteTxFifo(txBuffer, sizeof(txBuffer));
 
   //waitForKeyPress();
 
   // How many bytes are in the TX FIFO
-  radio.cc112xSpiReadReg(CC112X_NUM_TXBYTES, &numTxBytes, 1);
-  Serial.print(numTxBytes);
-  Serial.println(" TX bytes");
+  radio.cc112xSpiReadReg(CC112X_NUM_RXBYTES, &numRxBytes, 1);
+  Serial.print(numRxBytes);
+  Serial.println(" RX bytes");
+
+  
+  // Write the packet to the TX FIFO on the radio
+  radio.cc112xSpiReadRxFifo(rxBuffer, sizeof(rxBuffer));
 
   //waitForKeyPress();
 
   // Strobe STX to send the packet
-  statusByte = radio.pyxSpiCmdStrobe(CC112X_STX);
+  statusByte = radio.pyxSpiCmdStrobe(CC112X_SRX);
 
   radio.cc112xSpiReadReg(CC112X_MARCSTATE, &marcstate, 1);
 
@@ -371,6 +373,7 @@ void loop(){
 
   //waitForKeyPress();
 
+
   statusByte = radio.cc112xSpiReadReg(CC112X_MARCSTATE, &marcstate, 1);
 
 
@@ -381,15 +384,15 @@ void loop(){
 
   //waitForKeyPress();
 
-  do{
-    radio.cc112xSpiReadReg(CC112X_NUM_TXBYTES, &numTxBytes, 1);
-    Serial.print(numTxBytes);
-    Serial.println(" TX bytes");
+  
+    radio.cc112xSpiReadReg(CC112X_NUM_RXBYTES, &numRxBytes, 1);
+    Serial.print(numRxBytes);
+    Serial.println(" RX bytes");
     delay(1000);
-  }while(numTxBytes > 0);
+  
   Serial.println("Message sent!");
 
-
+/*
   // Wait for packet to be sent
   do{
     radio.cc112xSpiReadReg(CC112X_GPIO_STATUS, &gpioStat, 1);
@@ -455,5 +458,5 @@ void loop(){
   }
   
   //Serial.print("\n\n");
-
+*/
 }

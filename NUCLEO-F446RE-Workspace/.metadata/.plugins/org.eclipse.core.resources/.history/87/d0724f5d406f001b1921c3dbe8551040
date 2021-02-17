@@ -1,0 +1,9 @@
+#include "uart.h"
+
+void printString(char* string)
+{
+	uint8_t uart_buf[];
+
+	strcpy((char*)uart_buf, string);
+	HAL
+}

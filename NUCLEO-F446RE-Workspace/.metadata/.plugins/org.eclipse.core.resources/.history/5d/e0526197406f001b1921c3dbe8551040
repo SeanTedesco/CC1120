@@ -1,0 +1,16 @@
+#include "uart.h"
+
+/******************************************************************************************
+ * Local Variables
+ */
+
+/******************************************************************************************
+ * Export Functions
+ */
+void printString(char* string)
+{
+	uint8_t uart_buf[];
+
+	strcpy((char*)uart_buf, string);
+	HAL_UART
+}

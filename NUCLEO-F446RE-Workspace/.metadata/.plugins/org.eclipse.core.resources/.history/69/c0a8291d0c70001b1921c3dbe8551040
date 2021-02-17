@@ -1,0 +1,20 @@
+/****************************************************************************
+ * @file 	cc112x_spi.c
+ * @brief 	Implementation file for basic and neccessary functions
+ * 			to communicate with CC112X over SPI
+ */
+
+/******************************************************************************
+ * INCLUDES
+ */
+
+#include "cc112x_spi.h"
+
+
+/******************************************************************************
+ * FUNCTIONS
+ */
+void readWriteSingleBurst(uint8 addr,uint8 *pData, uint16 len)
+{
+
+}

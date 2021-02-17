@@ -1,0 +1,23 @@
+#include "uart.h"
+
+/******************************************************************************************
+ * Local Variables
+ */
+UART_HandleTypeDef* UART_Handle;
+
+
+/******************************************************************************************
+ * Export Functions
+ */
+void initUART(UART_HandleTypeDef* huart)
+{
+	UART_Handle = huart;
+}
+
+void printString(char* string)
+{
+	uint8_t uart_buf[];
+
+	strcpy((char*)uart_buf, string);
+	HAL_UART_Transmit(UART_Handle);
+}

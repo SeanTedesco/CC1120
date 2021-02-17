@@ -1,0 +1,21 @@
+/****************************************************************************
+ * @file 	cc112x_spi.c
+ * @brief 	Implementation file for basic and neccessary functions
+ * 			to communicate with CC112X over SPI
+ */
+
+/******************************************************************************
+ * INCLUDES
+ */
+
+#include <cc112x_spi.hpp>
+
+
+/******************************************************************************
+ * FUNCTIONS
+ */
+
+
+CC1120::CC1120(uint8_t number){
+  radioNumber = number;
+}

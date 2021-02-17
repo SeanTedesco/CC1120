@@ -1,0 +1,27 @@
+!SESSION 2021-02-14 22:19:14.361 -----------------------------------------------
+eclipse.buildId=Version 1.5.0
+java.version=1.8.0_272
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-02-14 22:19:19.889
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-02-14 22:19:19.949
+!MESSAGE Log4j initialized with config file C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-02-14 22:19:21.413
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2021-02-14 22:19:21.965
+!MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-02-14 22:21:02.824
+!MESSAGE Indexed 'nucleo-f446re-cc1120' (22 sources, 81 headers) in 3.13 sec: 4,828 declarations; 24,896 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0067%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-02-14 22:28:50.640
+!MESSAGE Indexed 'nucleo-f446re-cc1120' (26 sources, 88 headers) in 1.24 sec: 5,519 declarations; 29,703 references; 0 unresolved inclusions; 1 syntax errors; 8 unresolved names (0.023%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-02-14 22:55:40.417
+!MESSAGE Indexed 'nucleo-f446re-cc1120' (24 sources, 86 headers) in 1 sec: 5,456 declarations; 29,590 references; 0 unresolved inclusions; 1 syntax errors; 3 unresolved names (0.0086%)

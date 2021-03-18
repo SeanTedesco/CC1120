@@ -273,7 +273,22 @@ typedef uint8 rfStatus_t;
  * FUNCTIONS
  */
 void initCC1120(SPI_HandleTypeDef hspi);
-void readWriteSingleBurst(uint8 addr, uint8 *pDataSI, uint8 *pDataSO, uint16 len);
+
+void registerConfig(registerSetting_t*, uint16_t);
+
+rfStatus_t pyx8BitRegAccess(uint8 accessType, uint8 addrByte, uint8 *pData, uint16 len);
+rfStatus_t pyxSpiCmdStrobe(uint8 cmd);
+
+/* CC112X specific prototype function */
+rfStatus_t pyx16BitRegAccess(uint8 accessType, uint8 extAddr, uint8 regAddr, uint8 *pData, uint8 len);
+
+/* basic set of access functions */
+rfStatus_t cc112xSpiReadReg(uint16 addr, uint8 *data, uint8 len);
+rfStatus_t cc112xGetTxStatus(void);
+rfStatus_t cc112xGetRxStatus(void);
+rfStatus_t cc112xSpiWriteReg(uint16 addr, uint8 *data, uint8 len);
+rfStatus_t cc112xSpiWriteTxFifo(uint8 *pWriteData, uint8 len);
+rfStatus_t cc112xSpiReadRxFifo(uint8 *pReadData, uint8 len);
 
 
 #endif

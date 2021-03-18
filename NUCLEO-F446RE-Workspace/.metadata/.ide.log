@@ -1180,3 +1180,342 @@
 2021-02-16 00:00:09,232 [INFO] ProjectBuilder:3425 - Time for Generating toolchain IDE Files: 1757mS.
 2021-02-16 00:00:09,233 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 1mS.
 2021-02-16 00:00:09,237 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 0mS.
+2021-02-19 15:22:36,812 [INFO] MainUpdater:2644 - connection check result : 10
+2021-02-19 15:22:36,813 [INFO] MainUpdater:2644 - connection check result : 10
+2021-02-19 15:22:36,963 [INFO] MicroXplorer:385 - Change Database Path : 
+2021-02-19 15:22:36,964 [INFO] MicroXplorer:415 - Change Database Version : DB.6.0.10
+2021-02-19 15:22:36,964 [WARN] ThirdParty:783 - waiting for thirdparty lock release [close project]
+2021-02-19 15:22:36,964 [INFO] ThirdParty:785 - entering critical section [close project]
+2021-02-19 15:22:36,965 [INFO] ThirdParty:796 - exiting critical section [close project]
+2021-02-19 15:22:36,968 [INFO] PinOutPanel:1434 - setPackage(No Configuration,No Configuration)
+2021-02-19 15:22:36,988 [WARN] IpParametersView:138 - Warning: This peripheral hasn't parameters
+2021-02-19 15:22:36,994 [WARN] MainPanel:236 - <html><b><center>Warning: This peripheral has no parameters to be configured<br></b></html>
+2021-02-19 15:22:36,997 [INFO] UtilMem:74 - Begin LoadConfig() Used Memory: 683811264 Bytes (1073741824)
+2021-02-19 15:22:36,999 [INFO] MicroXplorer:385 - Change Database Path : 
+2021-02-19 15:22:36,999 [INFO] MicroXplorer:415 - Change Database Version : DB.6.0.10
+2021-02-19 15:22:36,999 [INFO] OpenFileManager:274 - Change cursor
+2021-02-19 15:22:37,001 [WARN] ThirdParty:204 - Use empty third party IP manager
+2021-02-19 15:22:37,025 [INFO] RulesReader:52 - Compatibility file has been processed (228 Rules)
+2021-02-19 15:22:38,530 [WARN] ApiManager:294 - Cannot register API 'Board Extension:S2868A1' from pack STMicroelectronics.X-CUBE-SUBG2.3.0.1: no header file found
+2021-02-19 15:22:38,531 [WARN] ApiManager:294 - Cannot register API 'Board Extension:S2868A2' from pack STMicroelectronics.X-CUBE-SUBG2.3.0.1: no header file found
+2021-02-19 15:22:38,531 [WARN] ApiManager:294 - Cannot register API 'Board Extension:S2915A1' from pack STMicroelectronics.X-CUBE-SUBG2.3.0.1: no header file found
+2021-02-19 15:22:38,532 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,532 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,532 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,532 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,532 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,532 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,532 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,532 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,532 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,532 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,532 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,533 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,533 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,533 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,533 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,533 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,533 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,533 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,533 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,533 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,533 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,533 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,533 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,534 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,534 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,534 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,534 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,534 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,534 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,534 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,534 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,534 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,534 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,534 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,534 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,534 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,535 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,535 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-19 15:22:38,536 [WARN] ApiManager:294 - Cannot register API 'Board Extension:S2868A1' from pack STMicroelectronics.X-CUBE-SFXS2LP1.2.0.0: no header file found
+2021-02-19 15:22:38,536 [WARN] ApiManager:294 - Cannot register API 'Board Extension:S2868A2' from pack STMicroelectronics.X-CUBE-SFXS2LP1.2.0.0: no header file found
+2021-02-19 15:22:38,537 [WARN] ApiManager:294 - Cannot register API 'Board Extension:S2915A1' from pack STMicroelectronics.X-CUBE-SFXS2LP1.2.0.0: no header file found
+2021-02-19 15:22:38,583 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS01A3' from pack STMicroelectronics.X-CUBE-MEMS1.8.2.0: no header file found
+2021-02-19 15:22:38,583 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS01A2' from pack STMicroelectronics.X-CUBE-MEMS1.8.2.0: no header file found
+2021-02-19 15:22:38,584 [WARN] ApiManager:294 - Cannot register API 'Board Extension:IKS02A1' from pack STMicroelectronics.X-CUBE-MEMS1.8.2.0: no header file found
+2021-02-19 15:22:38,587 [WARN] ApiManager:294 - Cannot register API 'Board Extension:EEPRMA1' from pack STMicroelectronics.X-CUBE-EEPRMA1.3.0.0: no header file found
+2021-02-19 15:22:38,587 [WARN] ApiManager:294 - Cannot register API 'Board Extension:EEPRMA2' from pack STMicroelectronics.X-CUBE-EEPRMA1.3.0.0: no header file found
+2021-02-19 15:22:38,587 [INFO] RtosManager:464 - Registered RTOS mode: class=CMSIS, group=RTOS, mode=CMSIS_V1, owner=FREERTOS
+2021-02-19 15:22:38,587 [INFO] RtosManager:464 - Registered RTOS mode: class=CMSIS, group=RTOS2, mode=CMSIS_V2, owner=FREERTOS
+2021-02-19 15:22:38,588 [INFO] RtosManager:464 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V1, owner=FREERTOS
+2021-02-19 15:22:38,588 [INFO] RtosManager:464 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V2, owner=FREERTOS
+2021-02-19 15:22:38,588 [WARN] ModelIntegratedComponent:182 - Missing modes for component STMicroelectronics:FreeRTOS:0.0.1:STMicroelectronics:RTOS:FreeRTOS:Core:::10.2.0:
+2021-02-19 15:22:38,589 [WARN] ApiManager:294 - Cannot register API 'Board Extension:GNSS1A1' from pack STMicroelectronics.X-CUBE-GNSS1.5.1.0: no header file found
+2021-02-19 15:22:38,589 [WARN] ApiManager:294 - Cannot register API 'Board Support:Custom' from pack STMicroelectronics.X-CUBE-GNSS1.5.1.0: no header file found
+2021-02-19 15:22:38,589 [WARN] ApiManager:294 - Cannot register API 'Data Exchange:lib_gnss' from pack STMicroelectronics.X-CUBE-GNSS1.5.1.0: no header file found
+2021-02-19 15:22:38,589 [WARN] ApiManager:294 - Cannot register API 'Wireless:BlueNRG-MS' from pack STMicroelectronics.X-CUBE-BLE1.6.1.0: no header file found
+2021-02-19 15:22:38,590 [WARN] ApiManager:294 - Cannot register API 'Board Extension:NFC04A1' from pack STMicroelectronics.X-CUBE-NFC4.2.0.1: no header file found
+2021-02-19 15:22:38,591 [WARN] ApiManager:294 - Cannot register API 'Wireless:BlueNRG-2' from pack STMicroelectronics.X-CUBE-BLE2.3.1.0: no header file found
+2021-02-19 15:22:38,675 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (48MHZClocksFreq_Value)
+2021-02-19 15:22:38,675 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (EthernetFreq_Value)
+2021-02-19 15:22:38,676 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (FLatency) has Id (AdvancedSettings) currently not set
+2021-02-19 15:22:38,676 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (FamilyName)
+2021-02-19 15:22:38,676 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (I2SClocksFreq_Value)
+2021-02-19 15:22:38,677 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (SDIOFreq_Value) has invalid value (168000000)
+2021-02-19 15:22:38,677 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (USBFreq_Value) has invalid value (168000000)
+2021-02-19 15:22:38,677 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (VCOInputMFreq_Value)
+2021-02-19 15:22:38,677 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (VcooutputI2S)
+2021-02-19 15:22:38,856 [INFO] UtilMem:74 - End LoadConfig() Used Memory: 545979792 Bytes (1073741824)
+2021-02-19 15:22:38,863 [WARN] ThirdParty:749 - waiting for thirdparty lock release [change project]
+2021-02-19 15:22:38,863 [INFO] ThirdParty:751 - entering critical section [change project]
+2021-02-19 15:22:38,863 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 2.0.0
+2021-02-19 15:22:38,864 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 3.0.1
+2021-02-19 15:22:38,864 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 3.0.0
+2021-02-19 15:22:38,864 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics HAL Drivers 0.0.0
+2021-02-19 15:22:38,864 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.16.2
+2021-02-19 15:22:38,864 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SFXS2LP1 2.0.0
+2021-02-19 15:22:38,864 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.14.1
+2021-02-19 15:22:38,864 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 2.0.0
+2021-02-19 15:22:38,864 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 8.2.0
+2021-02-19 15:22:38,864 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-EEPRMA1 3.0.0
+2021-02-19 15:22:38,864 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DISPLAY 1.0.0
+2021-02-19 15:22:38,864 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2021-02-19 15:22:38,864 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 1.0.0
+2021-02-19 15:22:38,864 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALGOBUILD 1.1.0
+2021-02-19 15:22:38,864 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 5.1.0
+2021-02-19 15:22:38,864 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 6.1.0
+2021-02-19 15:22:38,864 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.0.3
+2021-02-19 15:22:38,865 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.1.2
+2021-02-19 15:22:38,865 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 1.0.0
+2021-02-19 15:22:38,865 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 2.0.1
+2021-02-19 15:22:38,865 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 5.2.0
+2021-02-19 15:22:38,865 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.1.0
+2021-02-19 15:22:38,865 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.16.0
+2021-02-19 15:22:38,865 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.2.0
+2021-02-19 15:22:38,865 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE2 3.1.0
+2021-02-19 15:22:38,865 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.3.0
+2021-02-19 15:22:38,865 [INFO] ThirdParty:757 - exiting critical section [change project]
+2021-02-19 15:22:38,943 [INFO] PinOutPanel:1434 - setPackage(No Configuration,No Configuration)
+2021-02-19 15:22:38,945 [INFO] PinOutPanel:1434 - setPackage(STM32F446RETx,LQFP64)
+2021-02-19 15:22:39,150 [INFO] UtilMem:74 - Before build in PCC Used Memory: 625088752 Bytes (1073741824)
+2021-02-19 15:22:39,325 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/seant/.stm32cubemx/plugins/power
+2021-02-19 15:22:39,349 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/seant/.stm32cubemx/plugins/power
+2021-02-19 15:22:39,364 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/seant/.stm32cubemx/plugins/power
+2021-02-19 15:22:39,367 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/seant/.stm32cubemx/plugins/power
+2021-02-19 15:22:39,394 [INFO] UtilMem:74 - After build in PCC Used Memory: 673849576 Bytes (1073741824)
+2021-02-19 15:22:39,404 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,404 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,404 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,405 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,405 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,405 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,405 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,405 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,405 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,405 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,406 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,406 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,406 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,406 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,406 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,407 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,407 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,407 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,407 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,407 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,407 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,408 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,408 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,408 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,409 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,409 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,410 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,410 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,410 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,410 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,411 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,411 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,411 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,411 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,412 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,412 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,412 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,413 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,413 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,413 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,413 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,414 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,414 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,414 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,414 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,415 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,415 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,415 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,416 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,416 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,417 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,417 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,417 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,418 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,418 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,419 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,419 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,420 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,420 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,420 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-19 15:22:39,435 [INFO] ApiDbMcu:456 - Load IP Config File for PDM2PCM
+2021-02-19 15:22:39,453 [INFO] OpenFileManager:294 - Restore cursor
+2021-02-19 15:23:30,827 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 865634536 Bytes (1073741824)
+2021-02-19 15:23:54,102 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 670599400 Bytes (1073741824)
+2021-02-19 15:23:55,042 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 684230888 Bytes (1073741824)
+2021-02-19 15:23:57,148 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 713592056 Bytes (1073741824)
+2021-02-19 15:23:57,320 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SPI
+2021-02-19 15:23:57,320 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2021-02-19 15:23:57,320 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2021-02-19 15:23:57,320 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2021-02-19 15:23:57,320 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-19 15:23:57,320 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-19 15:23:57,321 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2021-02-19 15:23:57,321 [INFO] CodeGenerator:639 - code generatio: config db path: C:\ST\STM32CubeIDE_1.5.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\
+2021-02-19 15:23:57,579 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\license.tmp_save
+2021-02-19 15:23:57,732 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\license.tmp
+2021-02-19 15:23:57,804 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\gpio.tmp_save
+2021-02-19 15:23:57,865 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\gpio.tmp
+2021-02-19 15:23:57,980 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-19 15:23:57,982 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-19 15:23:58,025 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\stm32f4xx_it.c_save
+2021-02-19 15:23:58,106 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\stm32f4xx_it.c
+2021-02-19 15:23:58,121 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\stm32f4xx_it.h_save
+2021-02-19 15:23:58,198 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\stm32f4xx_it.h
+2021-02-19 15:23:58,244 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\stm32f4xx_hal_msp.c_save
+2021-02-19 15:23:58,346 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\stm32f4xx_hal_msp.c
+2021-02-19 15:23:58,357 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\system.tmp_save
+2021-02-19 15:23:58,407 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\system.tmp
+2021-02-19 15:23:58,449 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\stm32f4xx_hal_conf.h_save
+2021-02-19 15:23:58,539 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\stm32f4xx_hal_conf.h
+2021-02-19 15:23:58,606 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\main.h_save
+2021-02-19 15:23:58,675 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\main.h
+2021-02-19 15:23:58,698 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\main.c_save
+2021-02-19 15:23:58,810 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\main.c
+2021-02-19 15:24:00,130 [INFO] ProjectBuilder:2328 - Time for Copy HAL[1] : 735mS.
+2021-02-19 15:24:00,135 [INFO] ProjectBuilder:3259 - Project Generator version: 3.11.0-B13
+2021-02-19 15:24:00,339 [INFO] ConfigFileManager:1238 - The Die is : DIE421
+2021-02-19 15:24:00,353 [INFO] ApiDbMcu:456 - Load IP Config File for FATFS
+2021-02-19 15:24:00,386 [INFO] ApiDbMcu:456 - Load IP Config File for FREERTOS
+2021-02-19 15:24:00,396 [INFO] ApiDbMcu:456 - Load IP Config File for LIBJPEG
+2021-02-19 15:24:00,446 [INFO] ApiDbMcu:456 - Load IP Config File for MBEDTLS
+2021-02-19 15:24:00,487 [INFO] ApiDbMcu:456 - Load IP Config File for USB_DEVICE
+2021-02-19 15:24:00,502 [INFO] ApiDbMcu:456 - Load IP Config File for USB_HOST
+2021-02-19 15:24:01,820 [INFO] ProjectBuilder:3425 - Time for Generating toolchain IDE Files: 1685mS.
+2021-02-19 15:24:01,821 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 0mS.
+2021-02-19 15:24:01,825 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 0mS.
+2021-02-19 15:43:52,627 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 899956040 Bytes (1073741824)
+2021-02-19 15:43:53,916 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 913587528 Bytes (1073741824)
+2021-02-19 15:43:55,214 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 473711936 Bytes (1073741824)
+2021-02-19 15:43:55,366 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SPI
+2021-02-19 15:43:55,366 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2021-02-19 15:43:55,366 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2021-02-19 15:43:55,366 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2021-02-19 15:43:55,366 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-19 15:43:55,367 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-19 15:43:55,367 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2021-02-19 15:43:55,368 [INFO] CodeGenerator:639 - code generatio: config db path: C:\ST\STM32CubeIDE_1.5.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\
+2021-02-19 15:43:55,566 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\license.tmp_save
+2021-02-19 15:43:55,611 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\license.tmp
+2021-02-19 15:43:55,647 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\gpio.tmp_save
+2021-02-19 15:43:55,695 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\gpio.tmp
+2021-02-19 15:43:55,770 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-19 15:43:55,772 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-19 15:43:55,809 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\stm32f4xx_it.c_save
+2021-02-19 15:43:55,876 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\stm32f4xx_it.c
+2021-02-19 15:43:55,883 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\stm32f4xx_it.h_save
+2021-02-19 15:43:55,941 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\stm32f4xx_it.h
+2021-02-19 15:43:55,976 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\stm32f4xx_hal_msp.c_save
+2021-02-19 15:43:56,068 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\stm32f4xx_hal_msp.c
+2021-02-19 15:43:56,073 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\system.tmp_save
+2021-02-19 15:43:56,119 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\system.tmp
+2021-02-19 15:43:56,153 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\stm32f4xx_hal_conf.h_save
+2021-02-19 15:43:56,244 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\stm32f4xx_hal_conf.h
+2021-02-19 15:43:56,304 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\main.h_save
+2021-02-19 15:43:56,363 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\main.h
+2021-02-19 15:43:56,379 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\main.c_save
+2021-02-19 15:43:56,544 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\main.c
+2021-02-19 15:43:56,996 [INFO] ProjectBuilder:2328 - Time for Copy HAL[1] : 130mS.
+2021-02-19 15:43:57,000 [INFO] ProjectBuilder:3259 - Project Generator version: 3.11.0-B13
+2021-02-19 15:43:57,186 [INFO] ConfigFileManager:1238 - The Die is : DIE421
+2021-02-19 15:43:59,008 [INFO] ProjectBuilder:3425 - Time for Generating toolchain IDE Files: 2008mS.
+2021-02-19 15:43:59,009 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 1mS.
+2021-02-19 15:43:59,015 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 0mS.
+2021-02-19 16:02:24,386 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 722877808 Bytes (1073741824)
+2021-02-19 16:02:25,596 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 736509296 Bytes (1073741824)
+2021-02-19 16:02:27,057 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 766395752 Bytes (1073741824)
+2021-02-19 16:02:27,215 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SPI
+2021-02-19 16:02:27,215 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2021-02-19 16:02:27,215 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2021-02-19 16:02:27,216 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2021-02-19 16:02:27,216 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-19 16:02:27,216 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-19 16:02:27,216 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2021-02-19 16:02:27,217 [INFO] CodeGenerator:639 - code generatio: config db path: C:\ST\STM32CubeIDE_1.5.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.0.202011121557\\db\
+2021-02-19 16:02:27,449 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\license.tmp_save
+2021-02-19 16:02:27,497 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\license.tmp
+2021-02-19 16:02:27,533 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\gpio.tmp_save
+2021-02-19 16:02:27,581 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\gpio.tmp
+2021-02-19 16:02:27,659 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-19 16:02:27,660 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-19 16:02:27,696 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\stm32f4xx_it.c_save
+2021-02-19 16:02:27,763 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\stm32f4xx_it.c
+2021-02-19 16:02:27,770 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\stm32f4xx_it.h_save
+2021-02-19 16:02:27,828 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\stm32f4xx_it.h
+2021-02-19 16:02:27,865 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\stm32f4xx_hal_msp.c_save
+2021-02-19 16:02:27,963 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\stm32f4xx_hal_msp.c
+2021-02-19 16:02:27,972 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\system.tmp_save
+2021-02-19 16:02:28,017 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\system.tmp
+2021-02-19 16:02:28,055 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\stm32f4xx_hal_conf.h_save
+2021-02-19 16:02:28,144 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\stm32f4xx_hal_conf.h
+2021-02-19 16:02:28,202 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\main.h_save
+2021-02-19 16:02:28,264 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\main.h
+2021-02-19 16:02:28,282 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\main.c_save
+2021-02-19 16:02:28,391 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\main.c
+2021-02-19 16:02:29,053 [INFO] ProjectBuilder:2328 - Time for Copy HAL[1] : 168mS.
+2021-02-19 16:02:29,057 [INFO] ProjectBuilder:3259 - Project Generator version: 3.11.0-B13
+2021-02-19 16:02:29,245 [INFO] ConfigFileManager:1238 - The Die is : DIE421
+2021-02-19 16:02:30,409 [INFO] ProjectBuilder:3425 - Time for Generating toolchain IDE Files: 1352mS.
+2021-02-19 16:02:30,410 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 0mS.
+2021-02-19 16:02:30,415 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 0mS.
+2021-03-14 19:16:53,583 [INFO] Activator:170 - 
+
+
+2021-03-14 19:16:53,587 [INFO] Activator:171 - !SESSION log4j initialized
+2021-03-14 19:17:21,564 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://sw-center.st.com:80: The target server failed to respond
+2021-03-14 19:17:21,566 [INFO] RetryExec:113 - Retrying request to {}->http://sw-center.st.com:80
+2021-03-14 19:17:28,599 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://sw-center.st.com:80: The target server failed to respond
+2021-03-14 19:17:28,600 [INFO] RetryExec:113 - Retrying request to {}->http://sw-center.st.com:80
+2021-03-14 21:52:35,509 [INFO] Activator:170 - 
+
+
+2021-03-14 21:52:35,513 [INFO] Activator:171 - !SESSION log4j initialized
+2021-03-14 21:53:03,972 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://sw-center.st.com:80: The target server failed to respond
+2021-03-14 21:53:03,974 [INFO] RetryExec:113 - Retrying request to {}->http://sw-center.st.com:80
+2021-03-14 21:53:08,146 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://sw-center.st.com:80: The target server failed to respond
+2021-03-14 21:53:08,147 [INFO] RetryExec:113 - Retrying request to {}->http://sw-center.st.com:80
+2021-03-14 21:53:08,428 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://sw-center.st.com:80: The target server failed to respond
+2021-03-14 21:53:08,428 [INFO] RetryExec:113 - Retrying request to {}->http://sw-center.st.com:80
+2021-03-14 21:53:13,349 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://sw-center.st.com:80: The target server failed to respond
+2021-03-14 21:53:13,349 [INFO] RetryExec:113 - Retrying request to {}->http://sw-center.st.com:80
+2021-03-14 21:53:14,299 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://sw-center.st.com:80: The target server failed to respond
+2021-03-14 21:53:14,299 [INFO] RetryExec:113 - Retrying request to {}->http://sw-center.st.com:80
+2021-03-15 08:34:48,767 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://sw-center.st.com:80: The target server failed to respond
+2021-03-15 08:34:48,767 [INFO] RetryExec:113 - Retrying request to {}->http://sw-center.st.com:80
+2021-03-15 08:34:49,611 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://sw-center.st.com:80: The target server failed to respond
+2021-03-15 08:34:49,612 [INFO] RetryExec:113 - Retrying request to {}->http://sw-center.st.com:80
+2021-03-15 08:34:50,344 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://sw-center.st.com:80: The target server failed to respond
+2021-03-15 08:34:50,344 [INFO] RetryExec:113 - Retrying request to {}->http://sw-center.st.com:80
+2021-03-15 10:49:42,798 [INFO] Activator:170 - 
+
+
+2021-03-15 10:49:42,800 [INFO] Activator:171 - !SESSION log4j initialized
+2021-03-15 10:50:08,188 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://sw-center.st.com:443: The target server failed to respond
+2021-03-15 10:50:08,191 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2021-03-15 10:50:08,823 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://sw-center.st.com:80: The target server failed to respond
+2021-03-15 10:50:08,823 [INFO] RetryExec:113 - Retrying request to {}->http://sw-center.st.com:80

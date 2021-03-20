@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;nucleo-f446re-cc1120/external/UART/uart.c&apos; to &apos;uart_lib.c&apos;" description="Rename resource &apos;uart.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="external/UART/uart.c" name="uart_lib.c" stamp="1616270362594" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;nucleo-f446re-cc1120/external/includes/uart.h&apos; to &apos;uart_lib.h&apos;" description="Rename resource &apos;uart.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="external/includes/uart.h" name="uart_lib.h" stamp="1616270383499" updateReferences="true"/>
+</session>

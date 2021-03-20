@@ -17,13 +17,15 @@
   ******************************************************************************
   */
 /* USER CODE END Header */
-
 /* Includes ------------------------------------------------------------------*/
+#include <uart_lib.h>
 #include "main.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "uart.h"
 #include "cc112x_spi.h"
+#include "i2c_lib.h"
+#include "uart_lib.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -39,9 +41,13 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+I2C_HandleTypeDef hi2c1;
+
 SPI_HandleTypeDef hspi2;
+
 UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
+
 /* USER CODE BEGIN PV */
 static registerSetting_t preferredSettings[] = {
     {CC112X_RFEND_CFG0,     0x20},
@@ -86,6 +92,7 @@ static registerSetting_t preferredSettings[] = {
     {CC112X_XOSC3,          0xC7},
     {CC112X_XOSC1,          0x07},
 };
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -94,6 +101,7 @@ static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_SPI2_Init(void);
 static void MX_USART3_UART_Init(void);
+static void MX_I2C1_Init(void);
 /* USER CODE BEGIN PFP */
 void tx_strobe(void);
 void rx_strobe(void);
@@ -107,6 +115,7 @@ void tx_pointers_read(void);
 void write_settings(void);
 void tx_buff_size_read(void);
 /* USER CODE END PFP */
+
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 /* USER CODE END 0 */
@@ -117,11 +126,17 @@ void tx_buff_size_read(void);
   */
 int main(void)
 {
-
   /* USER CODE BEGIN 1 */
+	uint8 i2c_buf[32];
+	uint8 spi_buf[32];
+	uint8 uart_buf[32];
+
+	HAL_StatusTypeDef ret;
+
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
+
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
@@ -139,14 +154,18 @@ int main(void)
   MX_USART2_UART_Init();
   MX_SPI2_Init();
   MX_USART3_UART_Init();
-
+  MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
+  // set up the connection to the OBC
+  initI2C(hi2c1);
   // set up connection to serial monitor
   initUART(huart2);
   // set up the spi connection to the transeiver
   initCC1120(hspi2);
   // bring CSN high
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
+  // tell obc that comms is working
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
   //tell user we're about to begin
   printString("<BEGIN PROGRAM>\r\n");
   /* USER CODE END 2 */
@@ -162,10 +181,11 @@ int main(void)
 
 	  printString("testing...\r\n");
 	  HAL_Delay(1000);
-	  /* USER CODE END WHILE */
-	  /* USER CODE BEGIN 3 */
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
   }
-  	  /* USER CODE END 3 */
+  /* USER CODE END 3 */
 }
 
 /**
@@ -211,6 +231,40 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief I2C1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_I2C1_Init(void)
+{
+
+  /* USER CODE BEGIN I2C1_Init 0 */
+
+  /* USER CODE END I2C1_Init 0 */
+
+  /* USER CODE BEGIN I2C1_Init 1 */
+
+  /* USER CODE END I2C1_Init 1 */
+  hi2c1.Instance = I2C1;
+  hi2c1.Init.ClockSpeed = 100000;
+  hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
+  hi2c1.Init.OwnAddress1 = 0;
+  hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
+  hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
+  hi2c1.Init.OwnAddress2 = 0;
+  hi2c1.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
+  hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
+  if (HAL_I2C_Init(&hi2c1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN I2C1_Init 2 */
+
+  /* USER CODE END I2C1_Init 2 */
+
 }
 
 /**
@@ -492,9 +546,8 @@ void Error_Handler(void)
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
   __disable_irq();
-  while (1)
-  {
-  }
+
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET); // tell obc that comms isn't working
   /* USER CODE END Error_Handler_Debug */
 }
 

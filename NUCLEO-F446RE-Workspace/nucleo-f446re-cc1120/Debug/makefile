@@ -11,6 +11,7 @@ RM := rm -rf
 -include sources.mk
 -include external/UART/subdir.mk
 -include external/SPI/subdir.mk
+-include external/I2C/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk

@@ -1,0 +1,15 @@
+#include "i2c_lib.h"
+
+/******************************************************************************************
+ * Local Variables
+ */
+I2C_HandleTypeDef I2C_Handle;
+
+
+/******************************************************************************************
+ * Export Functions
+ */
+void initI2C(I2C_HandleTypeDef hi2c)
+{
+	SPI_Handle = hi2c;
+}

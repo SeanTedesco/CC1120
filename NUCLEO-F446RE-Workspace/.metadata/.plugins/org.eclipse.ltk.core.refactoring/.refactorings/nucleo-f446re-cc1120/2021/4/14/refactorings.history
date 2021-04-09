@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;nucleo-f446re-cc1120/external/includes/cc112x_spi.h&apos; to &apos;spi_lib.h&apos;" description="Rename resource &apos;cc112x_spi.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="external/includes/cc112x_spi.h" name="spi_lib.h" stamp="1617335258173" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;nucleo-f446re-cc1120/external/SPI/cc112x_spi.c&apos; to &apos;spi_lib.c&apos;" description="Rename resource &apos;cc112x_spi.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="external/SPI/cc112x_spi.c" name="spi_lib.c" stamp="1617335272937" updateReferences="true"/>
+</session>

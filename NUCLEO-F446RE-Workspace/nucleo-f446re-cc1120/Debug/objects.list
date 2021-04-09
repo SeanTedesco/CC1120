@@ -25,5 +25,5 @@
 "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
 "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o"
 "external/I2C/i2c_lib.o"
-"external/SPI/cc112x_spi.o"
+"external/SPI/spi_lib.o"
 "external/UART/uart_lib.o"

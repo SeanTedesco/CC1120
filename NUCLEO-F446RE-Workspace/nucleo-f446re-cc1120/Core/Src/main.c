@@ -19,13 +19,11 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include <uart_lib.h>
+#include <spi_lib.h>
 #include "main.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "cc112x_spi.h"
-#include "i2c_lib.h"
-#include "uart_lib.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -38,61 +36,42 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
+/* Extended Configuration Registers */
+const uint16 CC112X_MARCSTATE =           		0x2F73;
+/* Command strobe registers */
+const uint8 CC112X_SRES =                    0x30;      /*  SRES    - Reset chip. */
+const uint8 CC112X_SFSTXON =                 0x31;      /*  SFSTXON - Enable and calibrate frequency synthesizer. */
+const uint8 CC112X_SXOFF =                   0x32;      /*  SXOFF   - Turn off crystal oscillator. */
+const uint8 CC112X_SCAL =                    0x33;      /*  SCAL    - Calibrate frequency synthesizer and turn it off. */
+const uint8 CC112X_SRX =                     0x34;      /*  SRX     - Enable RX. Perform calibration if enabled. */
+const uint8 CC112X_STX =                     0x35;      /*  STX     - Enable TX. If in RX state, only enable TX if CCA passes. */
+const uint8 CC112X_SIDLE =                   0x36;      /*  SIDLE   - Exit RX / TX, turn off frequency synthesizer. */
+const uint8 CC112X_SWOR =                    0x38;      /*  SWOR    - Start automatic RX polling sequence (Wake-on-Radio) */
+const uint8 CC112X_SPWD =                    0x39;      /*  SPWD    - Enter power down mode when CSn goes high. */
+const uint8 CC112X_SFRX =                    0x3A;      /*  SFRX    - Flush the RX FIFO buffer. */
+const uint8 CC112X_SFTX =                    0x3B;      /*  SFTX    - Flush the TX FIFO buffer. */
+const uint8 CC112X_SWORRST =                 0x3C;      /*  SWORRST - Reset real time clock. */
+const uint8 CC112X_SNOP =                    0x3D;      /*  SNOP    - No operation. Returns status byte. */
+const uint8 CC112X_AFC =                     0x37;      /*  AFC     - Automatic Frequency Correction */
+/* Chip states returned in status byte */
+const uint8 CC112X_STATE_IDLE =			0x00;
+const uint8 CC112X_STATE_RX =           0x10;
+const uint8 CC112X_STATE_TX =			0x20;
+const uint8 CC112X_STATE_FSTXON =    	0x30;
+const uint8 CC112X_STATE_CALIBRATE =  	0x40;
+const uint8 CC112X_STATE_SETTLING =     0x50;
+const uint8 CC112X_STATE_RXFIFO_ERROR = 0x60;
+const uint8 CC112X_STATE_TXFIFO_ERROR = 0x70;
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+/* USER CODE BEGIN PV */
 I2C_HandleTypeDef hi2c1;
 
 SPI_HandleTypeDef hspi2;
 
 UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
-
-/* USER CODE BEGIN PV */
-static registerSetting_t preferredSettings[] = {
-    {CC112X_RFEND_CFG0,     0x20},
-    {CC112X_IOCFG3,         0xB0},
-    {CC112X_IOCFG2,         0x06},
-    {CC112X_IOCFG1,         0xB0},
-    {CC112X_IOCFG0,         0xB0},
-    {CC112X_SYNC_CFG1,      0x0B},
-    {CC112X_DCFILT_CFG,     0x1C},
-    {CC112X_IQIC,           0xC6},
-    {CC112X_CHAN_BW,        0x08},
-    {CC112X_MDMCFG0,        0x05},
-    {CC112X_AGC_REF,        0x20},
-    {CC112X_AGC_CS_THR,     0x19},
-    {CC112X_AGC_CFG1,       0xA9},
-    {CC112X_AGC_CFG0,       0xCF},
-    {CC112X_FIFO_CFG,       0x00},
-    {CC112X_SETTLING_CFG,   0x03},
-    {CC112X_FS_CFG,         0x12},
-    {CC112X_PKT_CFG1,       0x05},
-    {CC112X_PKT_CFG0,       0x20},
-    {CC112X_PA_CFG2,        0x4F},
-    {CC112X_PA_CFG1,        0x56},
-    {CC112X_PA_CFG0,        0x1C},
-    {CC112X_PKT_LEN,        0xFF},
-    {CC112X_IF_MIX_CFG,     0x00},
-    {CC112X_FREQOFF_CFG,    0x22},
-    {CC112X_FREQ2,          0x6C},
-    {CC112X_FREQ1,          0x80},
-    {CC112X_FREQ0,          0x00},
-    {CC112X_FS_DIG1,        0x00},
-    {CC112X_FS_DIG0,        0x5F},
-    {CC112X_FS_CAL0,        0x0E},
-    {CC112X_FS_DIVTWO,      0x03},
-    {CC112X_FS_DSM0,        0x33},
-    {CC112X_FS_DVC0,        0x17},
-    {CC112X_FS_PFD,         0x50},
-    {CC112X_FS_PRE,         0x6E},
-    {CC112X_FS_REG_DIV_CML, 0x14},
-    {CC112X_FS_SPARE,       0xAC},
-    {CC112X_XOSC5,          0x0E},
-    {CC112X_XOSC3,          0xC7},
-    {CC112X_XOSC1,          0x07},
-};
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -114,6 +93,7 @@ void direct_tx_fifo_read(void);
 void tx_pointers_read(void);
 void write_settings(void);
 void tx_buff_size_read(void);
+void read_marcstate(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -127,11 +107,13 @@ void tx_buff_size_read(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	uint8 i2c_buf[32];
-	uint8 spi_buf[32];
-	uint8 uart_buf[32];
+	//uint8 i2c_buf[32];
+	//uint8 spi_buf[32];
+	//char uart_buf[32];
 
-	HAL_StatusTypeDef ret;
+	//uint8 uart_buf_len;
+
+	//HAL_StatusTypeDef ret;
 
   /* USER CODE END 1 */
 
@@ -155,13 +137,10 @@ int main(void)
   MX_SPI2_Init();
   MX_USART3_UART_Init();
   MX_I2C1_Init();
+
   /* USER CODE BEGIN 2 */
-  // set up the connection to the OBC
-  initI2C(hi2c1);
   // set up connection to serial monitor
   initUART(huart2);
-  // set up the spi connection to the transeiver
-  initCC1120(hspi2);
   // bring CSN high
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
   // tell obc that comms is working
@@ -174,13 +153,17 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  uint8_t str[30];
-	  uint8_t str_len = sprintf((char*)str, "s");
-	  HAL_UART_Transmit(&huart3, str, (uint32_t)str_len, 0xFFFF);
 
-
-	  printString("testing...\r\n");
+	  tx_strobe();
+	  read_marcstate();
 	  HAL_Delay(1000);
+
+	  rx_strobe();
+	  read_marcstate();
+	  HAL_Delay(1000);
+
+	  //printString("...\r\n");
+	  //HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -430,6 +413,26 @@ static void MX_GPIO_Init(void)
 void tx_strobe(void)
 {
 	printString("called tx_strobe()\r\n");
+
+	uint8 tempRxData = 0x0;
+
+	// bring CSN low to begin communication
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+
+	// write out the command
+	HAL_SPI_Transmit(&hspi2, (uint8_t*)(&CC112X_STX), 1, HAL_MAX_DELAY);
+
+	//receive the register status on the miso line
+	HAL_SPI_Receive(&hspi2, &tempRxData, 1, HAL_MAX_DELAY);
+
+	// bring CSN high to end communication
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
+
+
+	// print out the state
+	printString("RETURN: ");
+	HAL_UART_Transmit(&huart2, tempRxData, strlen((char*) tempRxData), HAL_MAX_DELAY);
+	printString("\r\n");
 }
 
 /***************************************************
@@ -440,6 +443,25 @@ void tx_strobe(void)
 void rx_strobe(void)
 {
 	printString("called rx_strobe()\r\n");
+
+	uint8* state = 0x0;
+
+	// bring CSN low to begin communication
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+
+	// write out the command
+	HAL_SPI_Transmit(&hspi2, (uint8_t*)(&CC112X_SRX), 1, HAL_MAX_DELAY);
+
+	//receive the register status on the miso line
+	HAL_SPI_Receive(&hspi2, &state, 1, HAL_MAX_DELAY);
+
+	// bring CSN high to end communication
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
+
+	// print out the state
+	printString("RETURN: ");
+	HAL_UART_Transmit(&huart2, &state, strlen((char*) state), HAL_MAX_DELAY);
+	printString("\r\n");
 }
 
 /****************************************************
@@ -534,6 +556,47 @@ void write_settings(void)
 void tx_buff_size_read(void)
 {
 	printString("called tx_buff_size_read()\r\n");
+
+
+}
+
+/***************************************************
+  * @ brief read the current state of the transceiver
+  * @ param None
+  * @ retval None
+  */
+void read_marcstate(void)
+{
+	//let user know what function we're using
+	printString("called read_marcstate()\r\n");
+
+	uint8 tempExt  = (CC112X_MARCSTATE>>8);
+	uint8 tempAddr = (CC112X_MARCSTATE & 0x00FF);
+	uint8 tempTxData = 0x00;
+	uint8* tempRxData = 0x0;
+
+	// bring CSN low to begin communication
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+
+	// begin access to extended register
+	HAL_SPI_Transmit(&hspi2, (uint8*)&tempExt, 1, HAL_MAX_DELAY);
+
+	// next byte needs to be the address of the marcstate register
+	HAL_SPI_Transmit(&hspi2, (uint8*)&tempAddr, 1, HAL_MAX_DELAY);
+
+	// read a value by sending all zeros on the mosi line
+	HAL_SPI_Transmit(&hspi2, (uint8*)&tempTxData, 1, HAL_MAX_DELAY);
+
+	//receive the register status on the miso line
+	HAL_SPI_Receive(&hspi2, &tempRxData, 1, HAL_MAX_DELAY);
+
+	// bring CSN high to end communication
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
+
+	// print out the state
+	printString("MARCSTATE: ");
+	HAL_UART_Transmit(&huart2, tempRxData, strlen((char*) tempRxData), HAL_MAX_DELAY);
+	printString("\r\n");
 }
 /* USER CODE END 4 */
 

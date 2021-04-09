@@ -1,0 +1,30 @@
+/****************************************************************************
+ * @file 	spi_lib.c
+ * @brief 	Implementation file for basic and neccessary functions to communicate over SPI
+ */
+
+/******************************************************************************
+ * INCLUDES
+ */
+#include <spi_lib.h>
+
+
+/******************************************************************************************
+ * Local Variables
+ */
+SPI_HandleTypeDef SPI_Handle;
+
+
+
+/******************************************************************************
+ * FUNCTIONS
+ */
+static void pyxReadWriteBurstSingle(uint8 addr,uint8 *pData,uint16 len);
+
+void initCC1120(SPI_HandleTypeDef hspi)
+{
+	SPI_Handle = hspi;
+}
+
+
+

@@ -2062,3 +2062,123 @@
 2021-03-20 08:32:15,572 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 0mS.
 2021-03-20 15:37:56,118 [INFO] DbMcusDocs:143 - JSON generation date=Mon Feb 08 08:35:07 EST 2021 (1612791307)
 2021-03-20 15:37:56,347 [INFO] DbMcusDocs:79 - Found 617 MCUs documents
+2021-03-20 15:38:10,263 [WARN] IP:2088 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2021-03-20 15:38:10,263 [WARN] IP:2088 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2021-03-20 15:38:10,342 [WARN] IP:2088 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2021-03-20 15:38:10,342 [WARN] IP:2088 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2021-03-20 15:38:10,342 [WARN] IP:2088 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2021-03-20 15:38:10,342 [WARN] IP:2088 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2021-03-20 15:38:10,411 [WARN] IP:2088 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2021-03-20 15:38:10,412 [WARN] IP:2088 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2021-03-20 15:38:10,413 [WARN] IP:2088 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2021-03-20 15:38:10,413 [WARN] IP:2088 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2021-03-20 15:38:10,417 [WARN] IP:2088 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2021-03-20 15:38:10,417 [WARN] IP:2088 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2021-03-20 15:39:14,389 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 407560032 Bytes (845152256)
+2021-03-20 15:39:33,461 [WARN] IP:2088 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2021-03-20 15:39:33,462 [WARN] IP:2088 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2021-03-20 15:39:33,560 [WARN] IP:2088 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2021-03-20 15:39:33,560 [WARN] IP:2088 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2021-03-20 15:39:33,561 [WARN] IP:2088 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2021-03-20 15:39:33,561 [WARN] IP:2088 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2021-03-20 15:39:33,616 [WARN] IP:2088 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2021-03-20 15:39:33,616 [WARN] IP:2088 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2021-03-20 15:39:33,617 [WARN] IP:2088 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2021-03-20 15:39:33,617 [WARN] IP:2088 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2021-03-20 15:39:33,621 [WARN] IP:2088 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2021-03-20 15:39:33,621 [WARN] IP:2088 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2021-03-20 15:39:47,311 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 661408576 Bytes (845152256)
+2021-03-20 15:39:48,691 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 678185792 Bytes (845152256)
+2021-03-20 15:39:50,540 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 356811880 Bytes (845152256)
+2021-03-20 15:39:50,922 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SPI
+2021-03-20 15:39:50,922 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2021-03-20 15:39:50,922 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2021-03-20 15:39:50,922 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: I2C
+2021-03-20 15:39:50,922 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2021-03-20 15:39:50,922 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-03-20 15:39:50,922 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-03-20 15:39:50,923 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2021-03-20 15:39:50,924 [INFO] CodeGenerator:641 - code generatio: config db path: C:/Users/seant/.stm32cubemx/databases/DB.6.0.10/db/
+2021-03-20 15:39:50,929 [WARN] IP:2088 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2021-03-20 15:39:50,929 [WARN] IP:2088 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2021-03-20 15:39:51,373 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\license.tmp_save
+2021-03-20 15:39:51,477 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\license.tmp
+2021-03-20 15:39:51,542 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\gpio.tmp_save
+2021-03-20 15:39:51,623 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\gpio.tmp
+2021-03-20 15:39:51,977 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-03-20 15:39:51,979 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-03-20 15:39:51,980 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-03-20 15:39:52,026 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\stm32f4xx_it.c_save
+2021-03-20 15:39:52,142 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\stm32f4xx_it.c
+2021-03-20 15:39:52,154 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\stm32f4xx_it.h_save
+2021-03-20 15:39:52,240 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\stm32f4xx_it.h
+2021-03-20 15:39:52,284 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\stm32f4xx_hal_msp.c_save
+2021-03-20 15:39:52,440 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\stm32f4xx_hal_msp.c
+2021-03-20 15:39:52,450 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\system.tmp_save
+2021-03-20 15:39:52,514 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\MXTmpFiles\system.tmp
+2021-03-20 15:39:52,554 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\stm32f4xx_hal_conf.h_save
+2021-03-20 15:39:52,660 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\stm32f4xx_hal_conf.h
+2021-03-20 15:39:52,741 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\main.h_save
+2021-03-20 15:39:52,831 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Inc\main.h
+2021-03-20 15:39:52,850 [INFO] CodeEngine:229 - oldGeneratedFile, C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\main.c_save
+2021-03-20 15:39:53,010 [INFO] CodeEngine:247 - Generated code: C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\Core\Src\main.c
+2021-03-20 15:39:53,913 [INFO] ProjectBuilder:2460 - Time for Copy HAL[1] : 210mS.
+2021-03-20 15:39:53,920 [INFO] ProjectBuilder:3418 - Project Generator version: 3.13.0-B3
+2021-03-20 15:39:54,420 [INFO] ConfigFileManager:1242 - The Die is : DIE421
+2021-03-20 15:39:56,499 [INFO] ProjectBuilder:3584 - Time for Generating toolchain IDE Files: 2579mS.
+2021-03-20 15:39:56,500 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 0mS.
+2021-03-20 15:39:56,507 [INFO] ProjectBuilder:2339 - Time for Copy CMSIS : 0mS.
+2021-04-01 23:41:34,154 [INFO] Activator:170 - 
+
+
+2021-04-01 23:41:34,156 [INFO] Activator:171 - !SESSION log4j initialized
+2021-04-01 23:41:34,929 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Could not load icon "icons/chip.png".
+2021-04-01 23:41:34,931 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Could not load icon "icons/chip.png".
+2021-04-01 23:41:34,945 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Could not load icon "icons/chip.png".
+2021-04-01 23:42:06,555 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://sw-center.st.com:80: The target server failed to respond
+2021-04-01 23:42:06,557 [INFO] RetryExec:113 - Retrying request to {}->http://sw-center.st.com:80
+2021-04-01 23:42:14,220 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://sw-center.st.com:80: The target server failed to respond
+2021-04-01 23:42:14,220 [INFO] RetryExec:113 - Retrying request to {}->http://sw-center.st.com:80
+2021-04-01 23:42:15,148 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://sw-center.st.com:80: The target server failed to respond
+2021-04-01 23:42:15,148 [INFO] RetryExec:113 - Retrying request to {}->http://sw-center.st.com:80
+2021-04-01 23:42:16,580 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://sw-center.st.com:443: The target server failed to respond
+2021-04-01 23:42:16,581 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2021-04-01 23:42:16,945 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://sw-center.st.com:443: The target server failed to respond
+2021-04-01 23:42:16,945 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2021-04-01 23:42:17,341 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://sw-center.st.com:443: The target server failed to respond
+2021-04-01 23:42:17,341 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2021-04-01 23:42:17,741 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://sw-center.st.com:443: The target server failed to respond
+2021-04-01 23:42:17,741 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2021-04-01 23:42:18,126 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://sw-center.st.com:443: The target server failed to respond
+2021-04-01 23:42:18,127 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2021-04-01 23:42:18,517 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://sw-center.st.com:443: The target server failed to respond
+2021-04-01 23:42:18,517 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2021-04-01 23:42:18,862 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://sw-center.st.com:443: The target server failed to respond
+2021-04-01 23:42:18,862 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2021-04-01 23:42:19,213 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://sw-center.st.com:443: The target server failed to respond
+2021-04-01 23:42:19,213 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2021-04-01 23:42:19,606 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://sw-center.st.com:443: The target server failed to respond
+2021-04-01 23:42:19,606 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2021-04-01 23:42:20,019 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://sw-center.st.com:443: The target server failed to respond
+2021-04-01 23:42:20,019 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2021-04-01 23:42:20,416 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://sw-center.st.com:443: The target server failed to respond
+2021-04-01 23:42:20,416 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2021-04-01 23:42:20,809 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://sw-center.st.com:443: The target server failed to respond
+2021-04-01 23:42:20,809 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2021-04-01 23:42:21,197 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://sw-center.st.com:443: The target server failed to respond
+2021-04-01 23:42:21,198 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2021-04-01 23:42:21,590 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://sw-center.st.com:443: The target server failed to respond
+2021-04-01 23:42:21,590 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2021-04-01 23:42:21,794 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://sw-center.st.com:443: The target server failed to respond
+2021-04-01 23:42:21,795 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2021-04-08 21:29:42,895 [INFO] Activator:170 - 
+
+
+2021-04-08 21:29:42,898 [INFO] Activator:171 - !SESSION log4j initialized
+2021-04-08 21:29:43,685 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Could not load icon "icons/chip.png".
+2021-04-08 21:29:43,688 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Could not load icon "icons/chip.png".
+2021-04-08 21:29:43,700 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Could not load icon "icons/chip.png".
+2021-04-08 21:39:46,928 [INFO] Activator:170 - 
+
+
+2021-04-08 21:39:46,931 [INFO] Activator:171 - !SESSION log4j initialized

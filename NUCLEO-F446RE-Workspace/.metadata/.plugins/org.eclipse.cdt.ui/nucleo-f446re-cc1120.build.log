@@ -1,24 +1,10 @@
-16:00:14 **** Incremental Build of configuration Debug for project nucleo-f446re-cc1120 ****
+00:29:14 **** Incremental Build of configuration Debug for project nucleo-f446re-cc1120 ****
 make -j12 all 
-arm-none-eabi-gcc "../external/UART/uart_lib.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/seant/OneDrive/Documents/QSAT/CC1120/NUCLEO-F446RE-Workspace/NUCLEO-F446RE-CC1120/external/includes" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"external/UART/uart_lib.d" -MT"external/UART/uart_lib.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "external/UART/uart_lib.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/seant/OneDrive/Documents/QSAT/CC1120/NUCLEO-F446RE-Workspace/NUCLEO-F446RE-CC1120/external/includes" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c:52:26: warning: 'preferredSettings' defined but not used [-Wunused-variable]
-   52 | static registerSetting_t preferredSettings[] = {
-      |                          ^~~~~~~~~~~~~~~~~
-arm-none-eabi-g++ -o "nucleo-f446re-cc1120.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-cc1120\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="nucleo-f446re-cc1120.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: nucleo-f446re-cc1120.elf
- 
-arm-none-eabi-objdump -h -S  nucleo-f446re-cc1120.elf  > "nucleo-f446re-cc1120.list"
-arm-none-eabi-objcopy  -O binary  nucleo-f446re-cc1120.elf  "nucleo-f446re-cc1120.bin"
 arm-none-eabi-size   nucleo-f446re-cc1120.elf 
    text	   data	    bss	    dec	    hex	filename
-  14060	    120	   2232	  16412	   401c	nucleo-f446re-cc1120.elf
+  14456	     20	   1932	  16408	   4018	nucleo-f446re-cc1120.elf
 Finished building: default.size.stdout
  
-Finished building: nucleo-f446re-cc1120.bin
- 
-Finished building: nucleo-f446re-cc1120.list
- 
 
-16:00:15 Build Finished. 0 errors, 1 warnings. (took 1s.271ms)
+00:29:14 Build Finished. 0 errors, 0 warnings. (took 487ms)
 

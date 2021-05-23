@@ -58,17 +58,18 @@ dkms.conf
 **.vscode
 
 #personal folder
-testing/
+/testing/
 metadata/
-NUCLEO-F446RE-Workspace/.metadata/**
+.metadata/
 **/Debug
 **/Drivers
 **.settings
 *.Id
+*.ld
 *.launch
 *.ioc
 *.project
 *.mxproject
 *.cproject
-**/Starup
+**/Starup/
 *.log

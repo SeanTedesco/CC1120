@@ -56,3 +56,19 @@ dkms.conf
 
 # IDE Settings
 **.vscode
+
+#personal folder
+testing/
+metadata/
+NUCLEO-F446RE-Workspace/.metadata/**
+**/Debug
+**/Drivers
+**.settings
+*.Id
+*.launch
+*.ioc
+*.project
+*.mxproject
+*.cproject
+**/Starup
+*.log

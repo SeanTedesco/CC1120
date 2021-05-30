@@ -1,0 +1,73 @@
+/*
+ * cw.h
+ *
+ *  Created on: Apr. 9, 2021
+ *      Author: seant
+ */
+
+#ifndef INC_CW_H_
+#define INC_CW_H_
+
+/******************************************************************************
+ * INCLUDES and DEFINES
+ */
+#include "main.h"
+#include <stdint.h>
+#include "stats.h"
+
+#define CW_DOT_DURATION_MS 		60
+#define CW_DASH_DURATION_MS 	(3*CW_DOT_DURATION_MS)
+#define CW_SYMBOL_SPACE_MS		CW_DOT_DURATION_MS
+#define CW_CHAR_SPACE_MS 		(3*CW_DOT_DURATION_MS)
+#define CW_WORD_SPACE_MS		(4*CW_DOT_DURATION_MS)
+
+/******************************************************************************
+ * TYPE DEFINTIONS
+ */
+typedef enum {
+	CW_DOT = 0,				// a dot (pulse of short duration)
+	CW_DASH = 1,			// a dash (pulse of long duration)
+	CW_CHAR_DELIM = 2, 		// character pause delimiter
+	CW_WORD_DELIM = 3,		// word pause delimiter
+	CW_SYMBOL_DELIM = 4,	// symbol pause delimiter
+	CW_INVALID = 5			// invalid symbol
+} cw_symbol_t;
+
+typedef struct {
+	uint8 cw_on;
+	uint32 duration_ms;
+} cw_pulse_t;
+
+typedef enum {
+	CW_OK = 0, 		// all oaky
+	CW_ERROR = -61	// an error occured
+} cw_status_t;
+
+typedef struct {
+	cw_symbol_t s[10];
+	uint8 s_num;
+	uint8 is_valid;
+} cw_char_t;
+
+/****************************************************************************
+ * FUNCTION PROTOTYPES
+ */
+void cw_init(void);
+
+int32 cw_encode(cw_pulse_t *out, size_t *out_len, const uint8 *in, size_t len);
+
+char cw_get_uptime_hours_char(comms_rf_stat_t *h);
+
+char cw_get_uptime_mins_char(comms_rf_stat_t *h);
+
+char cw_get_temp_char(comms_rf_stat_t *h);
+
+char cw_get_cont_errors_char(comms_rf_stat_t *h);
+
+char cw_get_last_error_char(comms_rf_stat_t *h);
+
+char cw_get_bat_voltage_char(comms_rf_stat_t *h);
+
+char cw_get_bat_current_char(comms_rf_stat_t *h);
+
+#endif /* INC_CW_H_ */

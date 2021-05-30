@@ -1,0 +1,10 @@
+18:46:54 **** Incremental Build of configuration Debug for project nucleo-f446re-i2c-test ****
+make -j12 all 
+arm-none-eabi-size   nucleo-f446re-i2c-test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13368	    120	   1752	  15240	   3b88	nucleo-f446re-i2c-test.elf
+Finished building: default.size.stdout
+ 
+
+18:46:55 Build Finished. 0 errors, 0 warnings. (took 414ms)
+

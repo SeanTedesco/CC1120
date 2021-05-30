@@ -1,0 +1,41 @@
+/*
+ * lfsr.h
+ *
+ *  Created on: Apr. 9, 2021
+ *      Author: seant
+ */
+
+#ifndef INC_LFSR_H_
+#define INC_LFSR_H_
+
+/******************************************************************************
+ * INCLUDES
+ */
+#include "main.h"
+#include "stdint.h"
+
+/****************************************************************************
+ * TYPE DEFINITIONS
+ */
+typedef struct {
+	uint32 mask;
+	uint32 seed;
+	uint32 order;
+	uint32 shift_reg;
+} lfsr_handle_t;
+
+/****************************************************************************
+ * FUNCTION PROTOTYPES
+ */
+int32 lfsr_init(lfsr_handle_t *h, uint32 mask, uint32 seed, uint32 order);
+
+uint8 lfsr_next_bit(lfsr_handle_t *h);
+
+uint8 lfsr_next_bit_scramble(lfsr_handle_t *h, uint8 bit);
+
+uint8 lfsr_next_bit_descramble(lfsr_handle_t *h, uint8 bit);
+
+int32 lfsr_reset(lfsr_handle_t *h);
+
+
+#endif /* INC_LFSR_H_ */

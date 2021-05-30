@@ -1,0 +1,22 @@
+/*
+ * cc112x_spi.c
+ *
+ *  Created on: May 8, 2021
+ *      Author: seant
+ */
+
+/******************************************************************************
+ * INCLUDES
+ */
+#include "cc112x_spi.h"
+#include "cc1120_config.h"
+#include "utils.h"
+//#include "log.h"
+#include "status.h"
+#include "scrambler.h"
+//#include "cc_tx_init.h"
+//#include "sysview.h"
+#include <string.h>
+
+#undef __FILE_ID__
+#define __FILE_ID__ 26

@@ -1,0 +1,14 @@
+/*
+ * lfsr.c
+ *
+ *  Created on: May 8, 2021
+ *      Author: seant
+ */
+
+/******************************************************************************
+ * INCLUDES
+ */
+#include "lfsr.h"
+#include "utils.h"
+
+

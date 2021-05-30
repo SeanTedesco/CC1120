@@ -1,0 +1,22 @@
+10:35:40 **** Incremental Build of configuration Debug for project newbie-f030r8-can-sbx-rx ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/cc112x_spi.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/cc112x_spi.d" -MT"Core/Src/cc112x_spi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/cc112x_spi.o"
+arm-none-eabi-gcc "../Core/Src/cc_tx_init.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/cc_tx_init.d" -MT"Core/Src/cc_tx_init.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/cc_tx_init.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "newbie-f030r8-can-sbx-rx.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\newbie-f030r8-can-sbx-rx\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="newbie-f030r8-can-sbx-rx.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: newbie-f030r8-can-sbx-rx.elf
+ 
+arm-none-eabi-objdump -h -S  newbie-f030r8-can-sbx-rx.elf  > "newbie-f030r8-can-sbx-rx.list"
+arm-none-eabi-objcopy  -O binary  newbie-f030r8-can-sbx-rx.elf  "newbie-f030r8-can-sbx-rx.bin"
+arm-none-eabi-size   newbie-f030r8-can-sbx-rx.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9124	     20	   3596	  12740	   31c4	newbie-f030r8-can-sbx-rx.elf
+Finished building: default.size.stdout
+ 
+Finished building: newbie-f030r8-can-sbx-rx.bin
+ 
+Finished building: newbie-f030r8-can-sbx-rx.list
+ 
+
+10:35:41 Build Finished. 0 errors, 0 warnings. (took 996ms)
+

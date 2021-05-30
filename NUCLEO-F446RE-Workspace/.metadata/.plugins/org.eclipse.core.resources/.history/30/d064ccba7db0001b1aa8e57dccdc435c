@@ -1,0 +1,57 @@
+/*
+ * cc_commands.h
+ *
+ *  Created on: Apr. 9, 2021
+ *      Author: seant
+ */
+
+#ifndef INC_CC_COMMANDS_H_
+#define INC_CC_COMMANDS_H_
+
+/******************************************************************************
+ * CONSTANTS
+ */
+
+/* DATA FIFO Access */
+#define CC112X_SINGLE_TXFIFO	0x3F      /*  TXFIFO  - Single accecss to Transmit FIFO */
+#define CC112X_BURST_TXFIFO     0x7F      /*  TXFIFO  - Burst accecss to Transmit FIFO  */
+#define CC112X_SINGLE_RXFIFO    0xBF      /*  RXFIFO  - Single accecss to Receive FIFO  */
+#define CC112X_BURST_RXFIFO     0xFF      /*  RXFIFO  - Busrrst ccecss to Receive FIFO  */
+
+#define CC112X_LQI_CRC_OK_BM    0x80
+#define CC112X_LQI_EST_BM       0x7F
+
+/* Command Strobe Registers */
+#define CC1120_SRES				0x30
+#define CC1120_SFSTXON			0x31
+#define CC1120_SXOFF			0x32
+#define CC1120_SCAL				0x33
+#define CC1120_SRX				0x34
+#define CC1120_STX				0x35
+#define CC1120_SIDLE			0x36
+#define CC1120_AFC				0x37
+#define CC1120_SWOR				0x38
+#define CC1120_SPWD				0x39
+#define CC1120_SFRX				0x3A
+#define CC1120_SFTX				0x3B
+#define CC1120_SWORRST			0x3C
+#define CC1120_SNOP				0x3D
+
+/* Bit fields in the chip status byte */
+#define CC1120_STATE_IDLE		0x00
+#define CC1120_STATE_RX			0x10
+#define CC1120_STATE_TX			0x20
+#define CC1120_STATE_FSTXON		0x30
+#define CC1120_STATECALIBRATE	0x40
+#define CC1120_STATE_SETTLING	0x50
+#define CC1120_STATE_RXFIFO_ERROR	0x60
+#define CC1120_STATE_TXFIFO_ERROR	0x70
+
+/* Radio Access Types */
+#define RADIO_BURST_ACCESS   	0x40
+#define RADIO_SINGLE_ACCESS 	0x00
+#define RADIO_READ_ACCESS    	0x80
+#define RADIO_WRITE_ACCESS   	0x00
+#define CC112X_CHIP_SELECT 		10
+
+#endif /* INC_CC_COMMANDS_H_ */

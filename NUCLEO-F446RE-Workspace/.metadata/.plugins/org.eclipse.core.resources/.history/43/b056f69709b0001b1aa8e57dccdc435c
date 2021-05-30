@@ -1,0 +1,60 @@
+/*
+ * comms_manager.h
+ *
+ *  Created on: Apr. 8, 2021
+ *      Author: seant
+ */
+
+#ifndef INC_COMMS_MANAGER_H_
+#define INC_COMMS_MANAGER_H_
+
+/****************************************************************************
+ * INCLUDES
+ */
+#include "main.h"
+//#include "rx_manager.h"
+//#include "tx_manager.h"
+#include "config.h"
+
+#define FRAME_OK 1
+
+/****************************************************************************
+ * TYPE DEFINITIONS
+ */
+/*
+ * @brief: a struct containing a set of TX jobs that the radio needs to take care of
+ */
+typedef struct {
+	uint8 tx_cw;
+	uint8 tx_wod;
+	uint8 tx_ext_wod;
+} comms_tx_job_list_t;
+
+/*
+ * @brief: a struct containing time and a flag for control over the different commands
+ */
+typedef struct {
+	uint32 time_ms;
+	uint8 is_armed;
+} comms_cmd_ctrl_t;
+
+/****************************************************************************
+ * FUNCTION PROTOTYPES
+ */
+int32 recv_payload(uint8 *out, size_t len, size_t timeout_ms);
+
+int32 send_payload(const uint8 *in, size_t len, size_t is_wod, size_t timeout_ms);
+
+int32 send_payload_cw(const uint8 *in, size_t len);
+
+int32 send_cw_beacon(void);
+
+uint8 is_tx_enabled(void);
+
+void set_cmd_and_ctrl_period(uint8 enable);
+
+void comms_init(void);
+
+int32 comms_routine_dispatcher(comms_tx_job_list_t *tx_jobs);
+
+#endif /* INC_COMMS_MANAGER_H_ */

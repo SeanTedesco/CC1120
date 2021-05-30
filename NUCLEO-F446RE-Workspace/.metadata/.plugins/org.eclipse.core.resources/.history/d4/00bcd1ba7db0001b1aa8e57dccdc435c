@@ -1,0 +1,58 @@
+/*
+ * config.h
+ *
+ *  Created on: Apr. 8, 2021
+ *      Author: seant
+ */
+
+#ifndef INC_CONFIG_H_
+#define INC_CONFIG_H_
+
+/****************************************************************************
+ * INCLUDES and DEFINES
+ */
+#include "main.h"
+#include "cc1120_config.h"
+
+#define COMMS_UART_DBG_EN 0
+#define COMMS_UART_BUF_LEN 256
+#define COMMS_UART_DEST_OBC 0	//set to 1 to make it the OBC, otherwise to debug monitor
+#define COMMS_DEFAULT_TIMEOUT_MS 4000
+#define COMMS_STATS_PERIOD_MS 1000
+
+/****************************************************************************
+ * CONSTANTS
+ */
+static const char 	__QSAT_CALLSIGN[] = "VA3TFO";
+static const uint8  __QSAT_SSID = 0;
+static const uint8 	__QSAT_AX25_CTRL = 0x03;
+static const char 	__QSAT_DEST_CALLSIGN[] = "GND";
+static const uint8  __QSAT_DEST_SSID = 0;
+static const uint8  __QSAT_DEST_SSID_WOD = 0x0E;
+static const char 	__QSAT_RF_SWITCH_CMD[] = "RF SW CMD";
+
+static const uint8 	__COMMS_RF_SWITCH_HASH[] =
+{
+		0x09, 0x0D, 0x99, 0x0B, 0x6F, 0xAE, 0x19, 0x35, 0xDC,
+		0xD4, 0x38, 0x94, 0x56, 0xD8, 0x82, 0x47, 0x56, 0xBE,
+		0x99, 0x95, 0x9F, 0xD6, 0xB4, 0x45, 0x7A, 0x9D, 0x0C,
+		0xB4, 0xD5, 0x86, 0x45, 0xE5};
+
+static const size_t	__COMMS_RF_SWITCH_KEY_LEN = 32;
+static const uint32	__COMMS_RF_ON_KEY = 0x16264E84;
+static const uint32	__COMMS_RF_OFF_KEY = 0x669D93A3;
+static const uint32	__COMMS_RF_KEY_FLASH_OFFSET = 0x0;
+static const uint32	__COMMS_HEADLESS_TX_FLASH_OFFSET = 0x4;
+static const uint32	__COMMS_DEFAULT_HEADLESS_TX_PATTERN = 0x48;
+static const uint32	__COMMS_CMD_AND_CTRL_PERIOD_MS = 80000;
+static const uint32	__SCRAMBLER_POLY = 0x21;
+static const uint32	__SCRAMBLER_SEED = 0x00;
+static const uint32	__SCRAMBLER_ORDER = 16;
+static const uint32	__TX_INTERVAL_MS = 30000;
+static const uint32	__WOD_VALID_REPEATS = 6;
+static const uint32	__HEARTBEAT_EPS_INTERVAL_MS = 100000;
+static const uint32	__OBS_COMM_INTERVAL_MS = 500;
+static const uint32	__CC1120_RX_FIFO_CHK_INTERVAL_MS = 500;
+static const uint32	__MAX_WOD_RETRANSMISSIONS = 6;
+
+#endif /* INC_CONFIG_H_ */

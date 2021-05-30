@@ -1,0 +1,45 @@
+/*
+ * scambler.h
+ *
+ *  Created on: Apr. 9, 2021
+ *      Author: seant
+ */
+
+#ifndef INC_SCRAMBLER_H_
+#define INC_SCRAMBLER_H_
+
+/******************************************************************************
+ * INCLUDES
+ */
+#include "main.h"
+#include "stdlib.h"
+#include "lfsr.h"
+
+/****************************************************************************
+ * TYPE DEFINITIONS
+ */
+typedef struct {
+	lfsr_handle_t lfsr;
+	uint8_t prev_bit;
+} scrambler_handle_t;
+
+/****************************************************************************
+ * FUNCTION PROTOTYPES
+ */
+int32 scrambler_init(scrambler_handle_t *h, uint32 pol, uint32 seed, uint32 order);
+
+int32 scrambler_reset(scrambler_handle_t *h);
+
+int32 descrambler_init(scrambler_handle_t *h, uint32 pol, uint32 seed, uint32 order);
+
+int32 descrambler_reset(scrambler_handle_t *h);
+
+int32 scramble_data(scrambler_handle_t *h, uint8 *out, uint8 *in, size_t len);
+
+int32 scramble_data_nrzi(scrambler_handle_t *h, uint8 *out, uint8 *in, size_t len);
+
+int32 scramble_one_bit_per_byte(scrambler_handle_t *h, uint8 *out, const uint8 *in, size_t bit_cnt);
+
+int32 descramble_one_bit_per_byte(scrambler_handle_t *h, uint8 *out, const uint8 *in, size_t bit_cnt);
+
+#endif /* INC_SCRAMBLER_H_ */

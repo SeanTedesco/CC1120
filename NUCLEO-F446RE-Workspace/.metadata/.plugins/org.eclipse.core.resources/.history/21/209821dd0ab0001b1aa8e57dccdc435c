@@ -1,0 +1,30 @@
+/*
+ * comms_manager.c
+ *
+ *  Created on: Apr. 9, 2021
+ *      Author: seant
+ */
+
+/****************************************************************************
+ * INCLUDES
+ */
+#include "comms_manager.h"
+//#include "ax25.h"
+//#include "status.h"
+//#include "cc_tx_init.h"
+//#include "cc_rx_init.h"
+//#include "persistent_mem.h"
+//#include "utils.h"
+//#include "log.h"
+//#include "services.h"
+//#include "pkt_pool.h"
+//#include "service_utilities.h"
+//#include "comms.h"
+//#include "verification_service.h"
+//#include "large_data_service.h"
+//#include "sensors.h"
+//#include "wod_handling.h"
+//#include "sha256.h"
+//#include "sysview.h"
+
+

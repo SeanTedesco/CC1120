@@ -56,11 +56,3 @@ dkms.conf
 
 # IDE Settings
 **.vscode
-
-#personal folder
-testing/
-metadata/
-.metadata/
-**/.metadata
-**/Debug
-*.log

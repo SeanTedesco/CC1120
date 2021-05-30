@@ -1,0 +1,55 @@
+/*
+ * cc112x_spi.h
+ *
+ *  Created on: Apr. 9, 2021
+ *      Author: seant
+ */
+
+#ifndef INC_CC112X_SPI_H_
+#define INC_CC112X_SPI_H_
+
+/******************************************************************************
+ * INCLUDES
+ */
+#include "main.h"
+#include "stm32f4xx_hal.h"
+#include "stm32f4xx_hal_spi.h"
+#include <stdint.h>
+#include "cc_definitions.h"
+#include "cc_commands.h"
+#include "config.h"
+#include "scrambler.h"
+#include "cw.h"
+
+#define CC_EXT_ADD 0x2F00
+
+/****************************************************************************
+ * FUNCTION PROTOTYPES
+ */
+uint8 cc_tx_rd_reg(uint16 addr, uint8 *data);
+
+uint8 cc_tx_wr_reg(uint16 addr, uint8 data);
+
+HAL_StatusTypeDef cc_tx_spi_write_fifo(const uint8 *data, uint8 *spi_rx_data, size_t len);
+
+int32 cc_tx_data_continuous(const uint8 *data, size_t size, uint8 *rec_data, size_t timeout_ms);
+
+int32 cc_tx_cw(const cw_pulse_t *in, size_t len);
+
+uint8 cc_tx_cmd(uint8 CMDStrobe);
+
+HAL_StatusTypeDef cc_rx_spi_read_fifo(uint8 *out, size_t len);
+
+HAL_StatusTypeDef cc_rx_spi_write_fifo(uint8 *data, uint8 *spi_rx_data, size_t len);
+
+uint8 cc_rx_rd_reg(uint16 addr, uint8 *data);
+
+uint8 cc_rx_wr_reg(uint16 addr, uint8 data);
+
+int32 cc_rx_data_packet(uint8 *out, size_t len, size_t timeout_ms);
+
+uint8 cc_rx_cmd(uint8 CMDStrobe);
+
+uint8 cc_rx_check_fifo_status(void);
+
+#endif /* INC_CC112X_SPI_H_ */

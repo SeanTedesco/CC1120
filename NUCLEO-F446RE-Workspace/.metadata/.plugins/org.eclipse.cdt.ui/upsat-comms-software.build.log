@@ -1,0 +1,172 @@
+09:33:23 **** Incremental Build of configuration Debug for project upsat-comms-software ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/ax25.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/ax25.d" -MT"Src/ax25.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/ax25.o"
+arm-none-eabi-gcc "../Src/cc112x_spi.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/cc112x_spi.d" -MT"Src/cc112x_spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/cc112x_spi.o"
+arm-none-eabi-gcc "../Src/cc_rx_init.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/cc_rx_init.d" -MT"Src/cc_rx_init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/cc_rx_init.o"
+arm-none-eabi-gcc "../Src/cc_tx_init.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/cc_tx_init.d" -MT"Src/cc_tx_init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/cc_tx_init.o"
+arm-none-eabi-gcc "../Src/comms_manager.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/comms_manager.d" -MT"Src/comms_manager.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/comms_manager.o"
+arm-none-eabi-gcc "../Src/cw.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/cw.d" -MT"Src/cw.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/cw.o"
+arm-none-eabi-gcc "../Src/lfsr.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/lfsr.d" -MT"Src/lfsr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/lfsr.o"
+arm-none-eabi-gcc "../Src/persistent_mem.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/persistent_mem.d" -MT"Src/persistent_mem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/persistent_mem.o"
+arm-none-eabi-gcc "../Src/pkt_pool.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/pkt_pool.d" -MT"Src/pkt_pool.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/pkt_pool.o"
+arm-none-eabi-gcc "../Src/rx_manager.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/rx_manager.d" -MT"Src/rx_manager.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/rx_manager.o"
+arm-none-eabi-gcc "../Src/scrambler.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/scrambler.d" -MT"Src/scrambler.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/scrambler.o"
+arm-none-eabi-gcc "../Src/sensors.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/sensors.d" -MT"Src/sensors.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sensors.o"
+../Src/persistent_mem.c: In function 'comms_persistent_mem_init':
+../Src/persistent_mem.c:26:10: warning: implicit declaration of function 'flash_INIT' [-Wimplicit-function-declaration]
+   26 |   return flash_INIT();
+      |          ^~~~~~~~~~
+../Src/persistent_mem.c: In function 'comms_write_persistent_word':
+../Src/persistent_mem.c:37:3: warning: implicit declaration of function 'flash_write_trasmit' [-Wimplicit-function-declaration]
+   37 |   flash_write_trasmit(word, offset);
+      |   ^~~~~~~~~~~~~~~~~~~
+../Src/persistent_mem.c: In function 'comms_read_persistent_word':
+../Src/persistent_mem.c:48:10: warning: implicit declaration of function 'flash_read_trasmit' [-Wimplicit-function-declaration]
+   48 |   return flash_read_trasmit(offset);
+      |          ^~~~~~~~~~~~~~~~~~
+../Src/pkt_pool.c: In function 'get_pkt':
+../Src/pkt_pool.c:29:17: warning: implicit declaration of function 'traceGET_PKT' [-Wimplicit-function-declaration]
+   29 |                 traceGET_PKT(i);
+      |                 ^~~~~~~~~~~~
+../Src/pkt_pool.c:31:36: warning: implicit declaration of function 'HAL_sys_GetTick' [-Wimplicit-function-declaration]
+   31 |                 pkt_pool.time[i] = HAL_sys_GetTick();
+      |                                    ^~~~~~~~~~~~~~~
+../Src/pkt_pool.c: In function 'free_pkt':
+../Src/pkt_pool.c:52:31: warning: logical not is only applied to the left hand side of comparison [-Wlogical-not-parentheses]
+   52 |     if(!C_ASSERT(pkt != NULL) == true) { return SATR_ERROR; }
+      |                               ^~
+../Src/pkt_pool.c:52:8: note: add parentheses around left hand side expression to silence this warning
+   52 |     if(!C_ASSERT(pkt != NULL) == true) { return SATR_ERROR; }
+../Src/pkt_pool.c:56:13: warning: implicit declaration of function 'traceFREE_PKT' [-Wimplicit-function-declaration]
+   56 |             traceFREE_PKT(i);
+      |             ^~~~~~~~~~~~~
+../Src/pkt_pool.c: In function 'pkt_pool_IDLE':
+../Src/pkt_pool.c:116:13: warning: implicit declaration of function 'traceGC_POOL_PKT' [-Wimplicit-function-declaration]
+  116 |             traceGC_POOL_PKT(i);
+      |             ^~~~~~~~~~~~~~~~
+../Src/pkt_pool.c: In function 'is_free_pkt':
+../Src/pkt_pool.c:94:1: warning: control reaches end of non-void function [-Wreturn-type]
+   94 | }
+      | ^
+arm-none-eabi-gcc "../Src/sha256.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/sha256.d" -MT"Src/sha256.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sha256.o"
+arm-none-eabi-gcc "../Src/stats.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/stats.d" -MT"Src/stats.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stats.o"
+arm-none-eabi-gcc "../Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/stm32f4xx_hal_msp.d" -MT"Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/stm32f4xx_it.d" -MT"Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f4xx_it.o"
+../Src/ax25.c: In function 'ax25_create_addr_field':
+../Src/ax25.c:71:28: warning: pointer targets in passing argument 1 of 'strnlen' differ in signedness [-Wpointer-sign]
+   71 |   for (i = 0; i < strnlen (dest_addr, AX25_CALLSIGN_MAX_LEN); i++) {
+      |                            ^~~~~~~~~
+      |                            |
+      |                            const uint8_t * {aka const unsigned char *}
+In file included from ../Inc/ax25.h:29,
+                 from ../Src/ax25.c:20:
+c:\st\stm32cubeide_1.5.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\include\string.h:119:18: note: expected 'const char *' but argument is of type 'const uint8_t *' {aka 'const unsigned char *'}
+  119 | size_t  strnlen (const char *, size_t);
+      |                  ^~~~~~~~~~~~
+../Src/ax25.c:86:28: warning: pointer targets in passing argument 1 of 'strnlen' differ in signedness [-Wpointer-sign]
+   86 |   for (i = 0; i < strnlen (src_addr, AX25_CALLSIGN_MAX_LEN); i++) {
+      |                            ^~~~~~~~
+      |                            |
+      |                            const uint8_t * {aka const unsigned char *}
+In file included from ../Src/scrambler.c:21:
+../Inc/log.h:29:15: warning: '_ecss_dbg_buffer_len' defined but not used [-Wunused-variable]
+   29 | static size_t _ecss_dbg_buffer_len;
+      |               ^~~~~~~~~~~~~~~~~~~~
+../Inc/log.h:28:16: warning: '_ecss_dbg_buffer' defined but not used [-Wunused-variable]
+   28 | static uint8_t _ecss_dbg_buffer[200];
+      |                ^~~~~~~~~~~~~~~~
+In file included from ../Inc/ax25.h:29,
+                 from ../Src/ax25.c:20:
+c:\st\stm32cubeide_1.5.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\include\string.h:119:18: note: expected 'const char *' but argument is of type 'const uint8_t *' {aka 'const unsigned char *'}
+  119 | size_t  strnlen (const char *, size_t);
+      |                  ^~~~~~~~~~~~
+../Inc/log.h:27:16: warning: '_log_uart_buffer' defined but not used [-Wunused-variable]
+   27 | static uint8_t _log_uart_buffer[COMMS_UART_BUF_LEN];
+      |                ^~~~~~~~~~~~~~~~
+In file included from ../Src/rx_manager.c:24:
+../Inc/log.h:29:15: warning: '_ecss_dbg_buffer_len' defined but not used [-Wunused-variable]
+   29 | static size_t _ecss_dbg_buffer_len;
+      |               ^~~~~~~~~~~~~~~~~~~~
+../Inc/log.h:28:16: warning: '_ecss_dbg_buffer' defined but not used [-Wunused-variable]
+   28 | static uint8_t _ecss_dbg_buffer[200];
+      |                ^~~~~~~~~~~~~~~~
+../Inc/log.h:27:16: warning: '_log_uart_buffer' defined but not used [-Wunused-variable]
+   27 | static uint8_t _log_uart_buffer[COMMS_UART_BUF_LEN];
+      |                ^~~~~~~~~~~~~~~~
+../Src/comms_manager.c: In function 'check_rf_switch_cmd':
+../Src/comms_manager.c:157:11: warning: unused variable 'flag' [-Wunused-variable]
+  157 |   uint8_t flag = 0;
+      |           ^~~~
+../Src/comms_manager.c: In function 'comms_routine_dispatcher':
+../Src/comms_manager.c:388:13: warning: implicit declaration of function 'rx_ecss' [-Wimplicit-function-declaration]
+  388 |       ret = rx_ecss(recv_buffer, ret);
+      |             ^~~~~~~
+In file included from ../Src/comms_manager.c:27:
+At top level:
+../Inc/log.h:29:15: warning: '_ecss_dbg_buffer_len' defined but not used [-Wunused-variable]
+   29 | static size_t _ecss_dbg_buffer_len;
+      |               ^~~~~~~~~~~~~~~~~~~~
+../Inc/log.h:28:16: warning: '_ecss_dbg_buffer' defined but not used [-Wunused-variable]
+   28 | static uint8_t _ecss_dbg_buffer[200];
+      |                ^~~~~~~~~~~~~~~~
+../Inc/log.h:27:16: warning: '_log_uart_buffer' defined but not used [-Wunused-variable]
+   27 | static uint8_t _log_uart_buffer[COMMS_UART_BUF_LEN];
+      |                ^~~~~~~~~~~~~~~~
+../Src/ax25.c: In function 'ax25_extract_payload':
+../Src/ax25.c:546:8: warning: implicit declaration of function 'C_ASSERT' [-Wimplicit-function-declaration]
+  546 |   if (!C_ASSERT (out != NULL && in != NULL)) {
+      |        ^~~~~~~~
+In file included from ../Src/ax25.c:21:
+At top level:
+../Inc/log.h:29:15: warning: '_ecss_dbg_buffer_len' defined but not used [-Wunused-variable]
+   29 | static size_t _ecss_dbg_buffer_len;
+      |               ^~~~~~~~~~~~~~~~~~~~
+../Inc/log.h:28:16: warning: '_ecss_dbg_buffer' defined but not used [-Wunused-variable]
+   28 | static uint8_t _ecss_dbg_buffer[200];
+      |                ^~~~~~~~~~~~~~~~
+../Inc/log.h:27:16: warning: '_log_uart_buffer' defined but not used [-Wunused-variable]
+   27 | static uint8_t _log_uart_buffer[COMMS_UART_BUF_LEN];
+      |                ^~~~~~~~~~~~~~~~
+../Src/cc112x_spi.c: In function 'cc_tx_data_continuous':
+../Src/cc112x_spi.c:305:7: warning: implicit declaration of function 'SYSVIEW_PRINT' [-Wimplicit-function-declaration]
+  305 |       SYSVIEW_PRINT("CC TX: Issue: %u", issue_len);
+      |       ^~~~~~~~~~~~~
+../Src/cc112x_spi.c: In function 'cc_rx_data_packet':
+../Src/cc112x_spi.c:527:7: warning: implicit declaration of function 'C_ASSERT' [-Wimplicit-function-declaration]
+  527 |   if(!C_ASSERT(cc_rx_check_fifo_status())) {
+      |       ^~~~~~~~
+In file included from ../Src/cc112x_spi.c:23:
+At top level:
+../Inc/log.h:29:15: warning: '_ecss_dbg_buffer_len' defined but not used [-Wunused-variable]
+   29 | static size_t _ecss_dbg_buffer_len;
+      |               ^~~~~~~~~~~~~~~~~~~~
+../Inc/log.h:28:16: warning: '_ecss_dbg_buffer' defined but not used [-Wunused-variable]
+   28 | static uint8_t _ecss_dbg_buffer[200];
+      |                ^~~~~~~~~~~~~~~~
+../Inc/log.h:27:16: warning: '_log_uart_buffer' defined but not used [-Wunused-variable]
+   27 | static uint8_t _log_uart_buffer[COMMS_UART_BUF_LEN];
+      |                ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc "../Src/tx_manager.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/tx_manager.d" -MT"Src/tx_manager.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/tx_manager.o"
+arm-none-eabi-gcc "../Src/wod_handling.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Inc -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/Config" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/OS" -I"C:/Users/seant/OneDrive/Documents/ProgrammingProjects/UPSAT/SystemView/Src/SEGGER" -I"C:/home/surligas/workspaceac6/ecss_services/core" -I"C:/home/surligas/workspaceac6/ecss_services/services" -I"C:/home/surligas/workspaceac6/ecss_services/platform/comms" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Inc -Os -ffunction-sections -Wall -u _printf_float -fstack-usage -MMD -MP -MF"Src/wod_handling.d" -MT"Src/wod_handling.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/wod_handling.o"
+../Src/wod_handling.c: In function 'comms_ex_wod_tx':
+../Src/wod_handling.c:288:5: warning: implicit declaration of function 'crt_pkt'; did you mean 'get_pkt'? [-Wimplicit-function-declaration]
+  288 |     crt_pkt(temp_pkt, (TC_TM_app_id)SYSTEM_APP_ID, TM, TC_ACK_NO,
+      |     ^~~~~~~
+      |     get_pkt
+../Src/wod_handling.c:295:11: warning: implicit declaration of function 'tx_ecss' [-Wimplicit-function-declaration]
+  295 |     ret = tx_ecss (temp_pkt);
+      |           ^~~~~~~
+../Src/wod_handling.c:306:5: warning: implicit declaration of function 'hk_crt_empty_pkt_TM' [-Wimplicit-function-declaration]
+  306 |     hk_crt_empty_pkt_TM(&temp_pkt, GND_APP_ID, sid);
+      |     ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "upsat-comms-software.elf" @"objects.list"  -lm -mcpu=cortex-m4 -T"../STM32F407VGTx_FLASH.ld" --specs=nosys.specs -Wl,-Map="upsat-comms-software.map" -Wl,--gc-sections -static -Wl,--start-group -lm -Wl,--end-group --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: upsat-comms-software.elf
+ 
+arm-none-eabi-size   upsat-comms-software.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35872	    480	   8136	  44488	   adc8	upsat-comms-software.elf
+Finished building: default.size.stdout
+ 
+
+09:33:25 Build Finished. 0 errors, 34 warnings. (took 2s.632ms)
+

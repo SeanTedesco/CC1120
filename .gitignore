@@ -58,20 +58,9 @@ dkms.conf
 **.vscode
 
 #personal folder
-**/testing/
+testing/
 metadata/
 .metadata/
 **/.metadata
 **/Debug
-**/Drivers
-**.settings
-*.Id
-*.ld
-*.launch
-*.ioc
-*.project
-*.mxproject
-*.cproject
-**/Starup/
 *.log
-*.s

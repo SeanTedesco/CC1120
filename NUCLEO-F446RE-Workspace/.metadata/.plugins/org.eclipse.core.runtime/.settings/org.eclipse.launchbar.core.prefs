@@ -12,3 +12,4 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:newbie-f030r8-can-sbx-rx\ Debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:nucleo-f446re-can-sbx-tx\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:nucleo-f446re-cc1120\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:nucleo-f446re-cc1120\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:nucleo-f446re-i2c-test/activeLaunchMode=run

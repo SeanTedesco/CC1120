@@ -1,32 +1,4 @@
-18:57:14 **** Incremental Build of configuration Debug for project nucleo-f446re-i2c-test ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'i2c_rx_byte_single':
-../Core/Src/main.c:319:14: warning: comparison between pointer and integer
-  319 |  if ( *pData != NULL )
-      |              ^~
-At top level:
-../Core/Src/main.c:355:16: warning: 'i2c_rx_with_stop' defined but not used [-Wunused-function]
-  355 | static uint8_t i2c_rx_with_stop(uint8_t* pData, char stop)
-      |                ^~~~~~~~~~~~~~~~
-../Core/Src/main.c:334:16: warning: 'i2c_rx_byte_multi' defined but not used [-Wunused-function]
-  334 | static uint8_t i2c_rx_byte_multi(uint8_t* pData, uint8_t length)
-      |                ^~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "nucleo-f446re-i2c-test.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\seant\OneDrive\Documents\QSAT\CC1120\NUCLEO-F446RE-Workspace\nucleo-f446re-i2c-test\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="nucleo-f446re-i2c-test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: nucleo-f446re-i2c-test.elf
- 
-arm-none-eabi-objdump -h -S  nucleo-f446re-i2c-test.elf  > "nucleo-f446re-i2c-test.list"
-arm-none-eabi-objcopy  -O binary  nucleo-f446re-i2c-test.elf  "nucleo-f446re-i2c-test.bin"
-arm-none-eabi-size   nucleo-f446re-i2c-test.elf 
-   text	   data	    bss	    dec	    hex	filename
-  13368	    120	   1752	  15240	   3b88	nucleo-f446re-i2c-test.elf
-Finished building: default.size.stdout
- 
-Finished building: nucleo-f446re-i2c-test.bin
- 
-Finished building: nucleo-f446re-i2c-test.list
- 
-18:57:18 **** Incremental Build of configuration Debug for project nucleo-f446re-i2c-test ****
+18:46:54 **** Incremental Build of configuration Debug for project nucleo-f446re-i2c-test ****
 make -j12 all 
 arm-none-eabi-size   nucleo-f446re-i2c-test.elf 
    text	   data	    bss	    dec	    hex	filename
